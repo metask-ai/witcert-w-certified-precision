@@ -1,0 +1,411 @@
+{
+ "what": "K0:TV 空洞/高 TV 读中真实输出误差小的占比 —— value-aware kill-shot",
+ "kind": "shadow 离线(零 GPU);E1 同源字节,SR 掩位 m∈(2, 3, 4)",
+ "preregistered": {
+  "primary": "P(max_d rel_dy ≤ 0.05 | TV_cert ≥ 0.99)",
+  "fallback": "空洞集为空时改用 P(rel_dy ≤ τ | TV_real ≥ 0.5)(预注册)",
+  "alive": "≥0.5",
+  "dead": "≤0.2",
+  "gray": "其间"
+ },
+ "verdict": "value_aware_dead",
+ "stratum_basis": "fallback_realized(TV_real≥0.5)",
+ "summary": {
+  "n_reads_total": 99072,
+  "n_vacuous_reads": 0,
+  "n_stratum": 1528,
+  "rescued_frac": {
+   "tau0.02": 0.0,
+   "tau0.05": 0.0,
+   "tau0.10": 0.0
+  },
+  "spearman_tvreal_reldy": 0.8716869354248047,
+  "spearman_tvcert_maxreldy": 0.8183649778366089,
+  "soundness_viol": {
+   "n": 0,
+   "n_trials": 103034880,
+   "delta_expected_order": 1.5851520000000001
+  }
+ },
+ "per_m": {
+  "2": {
+   "n_reads": 33024,
+   "n_vac": 0
+  },
+  "3": {
+   "n_reads": 33024,
+   "n_vac": 0
+  },
+  "4": {
+   "n_reads": 33024,
+   "n_vac": 0
+  }
+ },
+ "per_layer": {
+  "0": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "1": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "2": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "3": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "4": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "5": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "6": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "7": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "8": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "9": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "10": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "11": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "12": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "13": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "14": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "15": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "16": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "17": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "18": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "19": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "20": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "21": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "22": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "23": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "24": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "25": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "26": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "27": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "28": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "29": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "30": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "31": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "32": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "33": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "34": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "35": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "36": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "37": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "38": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "39": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "40": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "41": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  },
+  "42": {
+   "E": 65,
+   "Q": 768,
+   "m2_vac_frac": 0.0,
+   "m3_vac_frac": 0.0,
+   "m4_vac_frac": 0.0
+  }
+ },
+ "inputs": [
+  {
+   "path": "out/wc_e1raw.rank0.pt",
+   "bytes": 11133657,
+   "sha256_16": "ee1fc25b0064ce1f"
+  },
+  {
+   "path": "out/wc_e1raw.rank1.pt",
+   "bytes": 11133657,
+   "sha256_16": "b3c63b51a83024c9"
+  },
+  {
+   "path": "out/wc_e1raw.rank2.pt",
+   "bytes": 11133657,
+   "sha256_16": "cb6f3002af23c1e8"
+  },
+  {
+   "path": "out/wc_e1raw.rank3.pt",
+   "bytes": 11133657,
+   "sha256_16": "3774b6c8786d54df"
+  },
+  {
+   "path": "out/wc_e1raw.rank4.pt",
+   "bytes": 11133657,
+   "sha256_16": "9120c1066c33a9d3"
+  },
+  {
+   "path": "out/wc_e1raw.rank5.pt",
+   "bytes": 11133657,
+   "sha256_16": "4e4ec38a1fba4700"
+  },
+  {
+   "path": "out/wc_e1raw.rank6.pt",
+   "bytes": 11133657,
+   "sha256_16": "7b0f9ad9cd1e3510"
+  },
+  {
+   "path": "out/wc_e1raw.rank7.pt",
+   "bytes": 11133657,
+   "sha256_16": "7635c1f4fceeec22"
+  }
+ ],
+ "freshness_argument": "字节+scale 写站点同批捕获,解码为字节的确定函数;q 同批;全程不经 packed pool 槽位往返(G0-REVIEW.md)",
+ "caliber": [
+  "池=同层 rank0 条目合并(合成读,记录无 uid);score 仅 nope 448 维",
+  "TV_cert=C2 osc+tanh(p90 胜出家族),u4 精确 MGF,δ=1e-6/E 联合",
+  "rel_dy 在 MLA latent 域(X 即 value 载体);绝对值非 serving 声明",
+  "soundness_viol 允许 δ 量级极少越界(概率证书语义,非 unsound)",
+  "本实验只裁 TV↔输出误差的结构关系;G3 的 Spearman 提升判据需 RRD-2 四臂在真实读上重测"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "unset",
+  "stack": "local cpu offline (torch)",
+  "code": "3ec1531",
+  "tree": "02c5422861c7",
+  "dirty": false,
+  "run_id": "rrd_k0",
+  "seed": 7,
+  "started_at": "2026-08-07T17:50:01Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "rrd_k0_output_visible.py"
+}

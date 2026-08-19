@@ -1,0 +1,131 @@
+% 参考文献 —— 每一条都经 arXiv abs 页 / 官方 anthology 核实(2026-08-13)。
+% 纪律:**不许凭记忆写条目**。作者名、arXiv 号、venue 三者中任何一项未核实,
+% 就把该项按 arXiv 预印本引(journal 字段填 arXiv 号),而不是填一个像样的猜测。
+% 注意:bibtex 在注释行里照样会把 at-符号当条目开头,所以本文件的注释**不许出现
+% at-符号** —— 首次写注释时用了它,bibtex 当场报 "I was expecting a {"(两次)。
+% 伪造的参考文献比没有参考文献严重得多 —— 审稿人一查即知,且无法辩解。
+%
+% venue 只在 arXiv comments 字段或官方 proceedings 页明确写出时才填:
+%   ICLR2025 (QERA) / ICML 2026 (YAQA, GEMQ) / ACL 2025 (EAC-MoE) /
+%   NeurIPS 2025 (DP-LLM) / ICCVW 2025 (QAQ) / ICLR 2023 (GPTQ) / MLSys 2024 (AWQ)。
+% 其余按 arXiv 预印本引 —— 宁可少标一个会议,不可标错一个。
+
+% ---- PTQ:激活/二阶权重 ----
+@inproceedings{gptq2023,
+  author = {Frantar, Elias and Ashkboos, Saleh and Hoefler, Torsten and Alistarh, Dan},
+  title = {{GPTQ}: Accurate Post-Training Quantization for Generative Pre-trained Transformers},
+  booktitle = {ICLR}, year = {2023}, note = {arXiv:2210.17323}}
+
+@inproceedings{awq2024,
+  author = {Lin, Ji and Tang, Jiaming and Tang, Haotian and Yang, Shang and Chen, Wei-Ming
+            and Wang, Wei-Chen and Xiao, Guangxuan and Dang, Xingyu and Gan, Chuang and Han, Song},
+  title = {{AWQ}: Activation-aware Weight Quantization for {LLM} Compression and Acceleration},
+  booktitle = {MLSys}, year = {2024}, note = {arXiv:2306.00978}}
+
+@inproceedings{qera2025,
+  author = {Zhang, Cheng and Wong, Jeffrey T. H. and Xiao, Can
+            and Constantinides, George A. and Zhao, Yiren},
+  title = {{QERA}: an Analytical Framework for Quantization Error Reconstruction},
+  booktitle = {ICLR}, year = {2025}, note = {arXiv:2410.06040}}
+
+@inproceedings{yaqa2026,
+  author = {Tseng, Albert and Sun, Zhaofeng and De Sa, Christopher},
+  title = {Model-Preserving Adaptive Rounding},
+  booktitle = {ICML}, year = {2026},
+  note = {arXiv:2505.22988; the method is named {YAQA}}}
+
+@article{watersic2026,
+  author = {Lifar, Egor and Savkin, Semyon and Ordentlich, Or and Polyanskiy, Yury},
+  title = {{WaterSIC}: Information-Theoretically (Near) Optimal Linear Layer Quantization},
+  journal = {arXiv:2603.04956}, year = {2026}}
+
+% ---- MoE 量化 ----
+@article{moequant2025,
+  author = {Hu, Xing and Chen, Zhixuan and Yang, Dawei and Xu, Zukang and Xu, Chen
+            and Yuan, Zhihang and Zhou, Sifan and Yu, Jiangyong},
+  title = {{MoEQuant}: Enhancing Quantization for Mixture-of-Experts Large Language Models
+           via Expert-Balanced Sampling and Affinity Guidance},
+  journal = {arXiv:2505.03804}, year = {2025}}
+
+@inproceedings{gemq2026,
+  author = {Deng, Jianing and Wang, Song and Wang, Dongwei and Liu, Zijie
+            and Chen, Tianlong and Yang, Huanrui and Hu, Jingtong},
+  title = {{GEMQ}: Global Expert-Level Mixed-Precision Quantization for {MoE} {LLMs}},
+  booktitle = {ICML}, year = {2026}, note = {arXiv:2605.23078}}
+
+@article{vsraq2026,
+  author = {Park, Hancheol and Lee, Geonho and Piao, Tairen and Kim, Tae-Ho},
+  title = {Value-and-Structure Alignment for Routing-Consistent Quantization
+           of Mixture-of-Experts Models},
+  journal = {arXiv:2606.05688}, year = {2026},
+  note = {the method is named {VSRAQ}}}
+
+@article{eaquant2025,
+  author = {Fu, Zhongqian and Zhao, Tianyi and Ding, Ning and Yu, Xianzhi
+            and Li, Xiaosong and Tang, Yehui and Wang, Yunhe},
+  title = {{EAQuant}: Enhancing Post-Training Quantization for {MoE} Models
+           via Expert-Aware Optimization},
+  journal = {arXiv:2506.13329}, year = {2025}}
+
+@inproceedings{eacmoe2025,
+  author = {Chen, Yuanteng and Shao, Yuantian and Wang, Peisong and Cheng, Jian},
+  title = {{EAC-MoE}: Expert-Selection Aware Compressor for Mixture-of-Experts
+           Large Language Models},
+  booktitle = {ACL}, year = {2025}, note = {arXiv:2508.01625}}
+
+% **已撤稿**(2026-08-13 核实):v4 comments 由作者声明撤回,理由含
+% "fundamental derivation errors in the NGES section compromise the mathematical
+% framework"。引用它的正文必须**当场标明撤稿**,不得把它的数字当作证据锚点。
+@misc{mobie2026,
+  author = {Zhao, Zhixiong and Xu, Zukang and Chen, Zhixuan and Yang, Dawei},
+  title = {{MoBiE}: Efficient Inference of Mixture of Binary Experts
+           under Post-Training Quantization},
+  howpublished = {arXiv:2604.06798}, year = {2026},
+  note = {withdrawn by the authors, 20 Apr 2026}}
+
+@article{routerkd2026,
+  author = {Hyeon, Sieun and Do, Jaeyoung},
+  title = {Is Retraining-Free Enough? The Necessity of Router Calibration
+           for Efficient {MoE} Compression},
+  journal = {arXiv:2603.02217}, year = {2026},
+  note = {the method is named Router {KD}}}
+
+% ---- 动态精度 serving ----
+@article{morphserve2025,
+  author = {Su, Zhaoyuan and Zhang, Zeyu and Lan, Tingfeng and Wang, Zirui
+            and Shen, Haiying and Yang, Juncheng and Cheng, Yue},
+  title = {{MorphServe}: Efficient and Workload-Aware {LLM} Serving via Runtime
+           Quantized Layer Swapping and {KV} Cache Resizing},
+  journal = {arXiv:2506.02006}, year = {2025}}
+
+@inproceedings{dpllm2025,
+  author = {Kwon, Sangwoo and Seo, Seong Hoon and Lee, Jae W. and Park, Yeonhong},
+  title = {{DP-LLM}: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment},
+  booktitle = {NeurIPS}, year = {2025}, note = {arXiv:2508.06041}}
+
+% **同名陷阱**(W0-LITERATURE 已警示,本轮差点踩中):另有一篇
+% "QAQ: Quality Adaptive Quantization for LLM KV Cache"(Dong 等,ICCVW 2025,
+% arXiv:2403.04643),做的是 KV cache 逐对位宽,与此条**不是同一篇**。
+% 正文 §related 讲的是 bit-plane + trainable router,对应的是下面这篇。
+@inproceedings{qaqqa2025,
+  author = {Li, Shuxing and Liu, Huanrong and Wang, Zelin and Du, Ruoyang
+            and Lee, S. and Tian, Chunlin and Li, Qingbiao},
+  title = {{QAQ}: Query-adaptive Mixed-precision Quantization for Large Language Models},
+  booktitle = {NeurIPS Workshop on ML for Systems}, year = {2025}}
+
+% ---- 运行时证书(本文的直接前身) ----
+@article{calver2026,
+  author = {Calver, Dean},
+  title = {Runtime-Certified Bounded-Error Quantized Attention},
+  journal = {arXiv:2605.20868}, year = {2026}}
+
+@article{witprobe2026,
+  author = {Wei, Fanzhe and Liu, Li and Wang, Ziyang and Wang, Chenyu},
+  title = {Runtime Observability for Heterogeneous Attention Memory},
+  journal = {arXiv:2608.05863}, year = {2026}}
+
+@article{witcert2026,
+  author = {Wei, Fanzhe and Liu, Li and Wang, Ziyang and Wang, Chenyu},
+  title = {{WitCert}: Sound Runtime Risk Observability and Gating
+           for {KV}-Cache Quantization},
+  journal = {arXiv:2607.28699}, year = {2026}}

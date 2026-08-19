@@ -1,0 +1,116 @@
+{
+ "what": "W3-CC 容量-成本扫描:GLM-5.2 fp8",
+ "server_info": {
+  "max_total_num_tokens": 291968,
+  "max_running_requests": null
+ },
+ "levels": [
+  {
+   "concurrency": 96,
+   "window_s": 194.1,
+   "completed": 181,
+   "errors": 0,
+   "agg_gen_tok_s": 477.40683267507654,
+   "ttft_p50": 56.477558612823486,
+   "ttft_p95": 129.7772204875946,
+   "tpot_p50": 0.15084080826746274,
+   "tpot_p95": 0.23962385099228115,
+   "hbm_used_mib": [
+    134710,
+    135068,
+    134806,
+    134806,
+    134806,
+    134806,
+    134326,
+    134808
+   ]
+  },
+  {
+   "concurrency": 128,
+   "window_s": 245.2,
+   "completed": 213,
+   "errors": 0,
+   "agg_gen_tok_s": 444.7698160931877,
+   "ttft_p50": 82.10780024528503,
+   "ttft_p95": 192.62913465499878,
+   "tpot_p50": 0.15207005573578777,
+   "tpot_p95": 0.2578390421932691,
+   "hbm_used_mib": [
+    134710,
+    135070,
+    134806,
+    134806,
+    134806,
+    134806,
+    134326,
+    134808
+   ]
+  },
+  {
+   "concurrency": 192,
+   "window_s": 357.9,
+   "completed": 277,
+   "errors": 0,
+   "agg_gen_tok_s": 396.30698143083225,
+   "ttft_p50": 138.55639696121216,
+   "ttft_p95": 325.2988579273224,
+   "tpot_p50": 0.16013277626784114,
+   "tpot_p95": 0.26250458360884754,
+   "hbm_used_mib": [
+    134712,
+    135070,
+    134806,
+    134806,
+    134806,
+    134806,
+    134326,
+    134808
+   ]
+  },
+  {
+   "concurrency": 256,
+   "window_s": 429.0,
+   "completed": 344,
+   "errors": 0,
+   "agg_gen_tok_s": 410.5389434967289,
+   "ttft_p50": 193.1666921377182,
+   "ttft_p95": 422.7223081588745,
+   "tpot_p50": 0.1522091379837514,
+   "tpot_p95": 0.25576871190285727,
+   "hbm_used_mib": [
+    134714,
+    135070,
+    134806,
+    134806,
+    134806,
+    134806,
+    134326,
+    134808
+   ]
+  }
+ ],
+ "session_mode": true,
+ "warmup_s": 90,
+ "prefix_namespace": "per-level((level,wid) 播种)—— 防跨档 cache 携带",
+ "session_note": "每 worker 自有长上下文跨轮复用(编程 agent 形状):首轮后 radix 命中前缀,prefill 被摊掉,KV 成为约束",
+ "caliber": [
+  "closed-loop;SSE 块计增量 token(块≈解码步,两臂同法可比,绝对 tok/s 以此口径自洽)",
+  "prompt 104000 chars 自然语料,max_new 512,temperature 0.7 ignore_eos(解码主导)",
+  "radix/graphs 生产姿态;两臂同机同客户端同种子"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "sglang 0.5.13 tp8/ep8/dp8, fp8",
+  "code": "87ef2ee",
+  "tree": "6b6871b82ed3",
+  "dirty": false,
+  "run_id": "w3cc_fp8",
+  "seed": 7,
+  "started_at": "2026-08-09T13:46:28Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3cc_capacity_client.py"
+}

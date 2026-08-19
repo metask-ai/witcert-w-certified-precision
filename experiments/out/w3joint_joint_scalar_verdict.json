@@ -1,0 +1,64 @@
+{
+ "what": "W3-JOINT 联合抽签的标量矩 Z=∑_v p_v e^{δ̃_v}(根定理消费的量)",
+ "verdict": "JOINT_SCALAR_MOMENT_MEASURED",
+ "lm_head_key": "head.weight",
+ "n_draws": 279,
+ "n_baselines": 9,
+ "n_pos_mode": 334,
+ "criteria": {
+  "J0_联合": true,
+  "J1_noise_floor": 0.0,
+  "J2_量纲": true,
+  "J3_点估非空洞": true,
+  "J4_上界非空洞": true,
+  "J5_betting_UCB非空洞": true,
+  "alpha": 0.01
+ },
+ "summary": {
+  "Z_mean": 1.0000050838963526,
+  "Z_var": 1.3065745503845911e-11,
+  "Z_min": 1.0000008740999484,
+  "Z_max": 1.0000238752224486,
+  "TV_mean": 1.2457862796486755e-05,
+  "TV_max": 4.4336604427983904e-05,
+  "TV_min": 2.852317864998375e-06,
+  "TV_ucb_betting": 0.032225720405921414,
+  "budget_point": 0.0022547468659712784,
+  "budget_bernstein_ub": 0.20860588545473632,
+  "bernstein_slack": 0.04447205583340412,
+  "slack_over_excess": 8747.632278335148
+ },
+ "lean_theorem": "served_tv_mean_le_massweighted",
+ "hyp_checks": {
+  "hp": "verified",
+  "hps": "verified",
+  "hcenter": "verified",
+  "hmgf": {
+   "status": "waived",
+   "reason": "measured-directly",
+   "note": "本产物不经 B_v 走该定理的 MGF 支路,而是直接测 TV_j 并用 betting CS 界 E[TV](TV∈[0,1] 为确定性边界);标量矩 Z 一路仅作对照报出"
+  }
+ },
+ "caliber": [
+  "**联合抽签**:同一 seed 的全部 43 层在同一次前向里生效 ⟹ Z 是真正的E_{ω_{1:L}} 意义下的样本,不是逐层矩相乘(后者需 ω-local 可加,已证伪)",
+  "标量归约 ⟹ **无 129,280 词元的 union**,α 只付一次",
+  "J4 的 R 取**样本极值**而非确定性上界 ⟹ 该上界是**诊断非 sound**;真 sound 需 Z 的确定性上界,或 betting 型置信序列(方差自适应、anytime-valid,恰是本文已有机制)",
+  "扰动仍是注意力输出上的随机向量,是'重采样该层 SR 抽签'的**代理**",
+  "**TV 的 [0,1] 是确定性边界**(两概率分布之间)⟹ betting CS 不需要任何样本极值,Bernstein 那个'R 取样本 max'的 non-sound 缺口在此路线上消失;且 CS 是 anytime-valid(与账本同语义)。剩余假设:各 draw 独立同分布",
+  "估计风险 α 须与账本风险 δ 相加:部署证书报 δ+α"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "H200 GPU-assisted post-hoc",
+  "code": "5800caf",
+  "tree": "unset",
+  "dirty": false,
+  "run_id": "w3joint_joint_scalar",
+  "seed": null,
+  "started_at": "2026-08-08T06:37:20Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3joint_scalar_verdict.py"
+}

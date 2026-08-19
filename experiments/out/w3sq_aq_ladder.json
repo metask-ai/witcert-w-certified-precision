@@ -1,0 +1,72 @@
+{
+ "what": "R1 查询包络 a_q 的三级阶梯与门控差距分解(离线)",
+ "model": "DeepSeek-V4-Flash",
+ "softmax_scale": 0.04419417382415922,
+ "softmax_scale_src": "config.json:head_dim=512; SGLang deepseek_v4.py self.softmax_scale = head_dim**-0.5(无 YaRN mscale 修正,已核源码)",
+ "rungs": {
+  "L1_sound_static": {
+   "a_q": 1.5067151645302945,
+   "q_norm": 34.093072324991226,
+   "sound": true,
+   "src": "experiments/out/w3sl_static_v4flash.json:qnorm_static_max",
+   "note": "权重派生、对所有输入成立 ⟹ **与 armed 同模型,无需任何一次运行**"
+  },
+  "L2_sound_envelope": {
+   "a_q": null,
+   "sound": true,
+   "src": null,
+   "note": "anytime-valid e-process 包络,未实现;是否值得做由 L1/L3 间距决定"
+  },
+  "L3_measured": {
+   "a_q": 1.0034,
+   "sound": false,
+   "src": "experiments/out/w3sb_served_readbound.json:inputs.a_q",
+   "note": "p76 campaign 采样统计量;**与 armed w_thr 不同 campaign**(见证尺度 0.70 vs 8~16),不得相乘"
+  }
+ },
+ "tightness_of_sound_bound": 1.501609691578926,
+ "armed_w_thr": 35.34,
+ "armed_w_thr_src": "experiments/launchers/w3av6_phys_h200.sh:31 WITCERT_LEDGER_WTHR=35.34(**发射侧一手来源**,不是转述);该门限与 u_e=mean_bound+tail+det_bound 比较,而 u_e 是**带范数和** ≥ ‖Δk‖(三角不等式,见 band_witness_fused)⟹ 与 a_q 同向同单位,复合合法",
+ "sla_gaps": {
+  "tau_0.01": {
+   "w_thr_star_sound": 0.006637175750767917,
+   "w_thr_star_measured_ref": 0.009966447432065739,
+   "gap_vs_armed_sound": 5324.553895670337,
+   "tv_bound_at_armed": 1.0
+  },
+  "tau_0.05": {
+   "w_thr_star_sound": 0.033212468060671144,
+   "w_thr_star_measured_ref": 0.049872163921159327,
+   "gap_vs_armed_sound": 1064.0582306452618,
+   "tv_bound_at_armed": 1.0
+  },
+  "tau_0.1": {
+   "w_thr_star_sound": 0.06659211382023507,
+   "w_thr_star_measured_ref": 0.09999536349519192,
+   "gap_vs_armed_sound": 530.6934706322745,
+   "tv_bound_at_armed": 1.0
+  }
+ },
+ "verdict": "gate_dominates",
+ "reading": "sound 的 a_q 只比实测大 1.50× ⟹ **差距不在查询包络**。认证 5% 逐读 served TV 需要 w_thr ≤ 0.0332(sound),而 armed 部署在 35.34 —— 差 1064×,且这 1064× 里 a_q 的松只占 1.50×。论文把开放项记为'待测 armed 模型的 a_q'是**错误定位**:sound 的 a_q 权重派生、无需运行,已经在手;真正开放的是门本身能否收紧三个数量级 —— 而那等价于把放行率压到接近零,即支柱 A 在**逐读 SLA 口径**下也面临与支柱 B 同型的可用性问题。",
+ "caliber": [
+  "L1 是**无条件 sound** 上界(算子范数),与 armed 同模型 —— 合法相乘",
+  "L3 是采样统计量且来自另一 campaign —— 只用来说明 L1 有多紧,不参与合成",
+  "本脚本零 GPU、零推理:输入全部是已冻结产物 + 一个配置常数",
+  "单位相容性**已核**:w_thr 门在 u_e 上,u_e 为带范数和 ≥‖Δk‖(sound),a_q 由 Cauchy--Schwarz 把 ‖Δk‖ 折成 logit 扰动 ⟹ 两者可乘。这一条曾是本结论唯一的暗前提,已由发射脚本一手确认而非推断"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "local",
+  "stack": "offline, zero-GPU",
+  "code": "925684a",
+  "tree": "unset",
+  "dirty": false,
+  "run_id": "w3sq_aq_ladder",
+  "seed": null,
+  "started_at": "2026-08-09T03:46:23Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3sq_aq_ladder.py"
+}

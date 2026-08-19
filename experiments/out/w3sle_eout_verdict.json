@@ -1,0 +1,78 @@
+{
+ "what": "W3-SL E_out:累计 served-TV 最终-logit 直测(exact vs 压缩)",
+ "verdict": "EOUT_MEASURED_NONVACUOUS",
+ "lm_head_key": "head.weight",
+ "n_requests": 8,
+ "n_positions_per_req": [
+  334,
+  298,
+  384,
+  453,
+  412,
+  346,
+  318,
+  342
+ ],
+ "capture_calls": {
+  "exact": 24,
+  "comp": 24
+ },
+ "comp_n_compressed": 96581,
+ "criteria": {
+  "V0_冻结": true,
+  "V1_tanh_sound_viol": 0,
+  "V2_tp_replicated": true,
+  "V2b_prefill_allpos": true,
+  "V3_nonvacuous": true,
+  "V4_capture_ran": true,
+  "V5_compressed": true,
+  "V6_hellinger_sound_viol": 0,
+  "V7_hellinger_nonvacuous": true,
+  "V8_subg_kernel_sound_viol": 0,
+  "V9_subg_kernel_nonvacuous": true
+ },
+ "summary": {
+  "E_out_all_median": 3.1971630583211663,
+  "E_out_all_max": 18.866455212897563,
+  "TV_real_all_median": 3.295737800387747e-05,
+  "TV_real_all_max": 0.252490910477022,
+  "E_out_served_median": 3.1146791590290377,
+  "E_out_served_max": 4.2952097061497625,
+  "TV_served_median": 0.11775754686349449,
+  "TV_served_max": 0.22419684920406563,
+  "cum_bound_tanh_served_median": 0.9960663200384694,
+  "hellinger_served_median": 0.1587113127008668,
+  "hellinger_served_max": 0.2774145301155612,
+  "var_p_delta_served_median": 0.11504819264527688,
+  "sig2_implied_served_median": 0.10613275499622254,
+  "sig2_over_varp_served": 0.985838843256857,
+  "sig2_over_varp_served_min": 0.7761958123987811,
+  "sig2_over_varp_served_max": 1.4685647063110947,
+  "sig2_over_varp_n": 8,
+  "subg_kernel_tv_served_median": 0.23036140626873955,
+  "subg_kernel_tv_served_max": 0.39731687791458375,
+  "first_order_tv_served_median": 0.16959377394621308
+ },
+ "caliber": [
+  "W_lm=V4-Flash 权重 FP8 dequant;hidden TP 复制取 rank0",
+  "末位 TV=该请求累计 served next-token TV(cumulative_output_tv 端到端实测)",
+  "定长 prompt prefill 逐位,无解码发散;cwrite 是唯一数值差异",
+  "tv_le_tanh(逐位)/tv_le_hellinger(末位 served)机检 ⟹ V1/V6 应 0 违反",
+  "Hellinger √(1−BC²) 破 tanh(‖Δlogit‖∞) 的 L∞ 墙(质量重叠非最坏坐标);此为**给定扰动**的 sound 界(需跑压缩测 δ),a-priori(仅见证)待续",
+  "sub-Gaussian kernel(served_tv_le_subgaussian 机检)对实测 δ 的 sound 界√(σ²/2),σ²=2·ln E_p[e^{δ̃}] 由实测 MGF 反解;sig2_over_varp→1 则扰动 sub-Gaussian 紧(variance 路线可 sound 破墙),≫1 则 range 主导"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "H200 GPU-assisted post-hoc",
+  "code": "17acd2e",
+  "tree": "unset",
+  "dirty": false,
+  "run_id": "w3sle_eout_verdict",
+  "seed": null,
+  "started_at": "2026-08-07T21:17:25Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3sle_eout_verdict.py"
+}

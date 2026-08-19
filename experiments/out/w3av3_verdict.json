@@ -1,0 +1,63 @@
+{
+ "verdict": "INVALID",
+ "criteria": {
+  "V0_冻结自证": {
+   "ok": true,
+   "value": "code={'union': '46145a7', 'cumopen': '46145a7', 'cumtight': '46145a7'} tree一致=True dirty={'union': False, 'cumopen': False, 'cumtight': Fals"
+  },
+  "V0b_预算旋钮对账": {
+   "ok": true,
+   "value": "cumopen.B̃=20000.0 cumtight.B̃=5000.0 union无cum=True"
+  },
+  "V1_三臂产物齐": {
+   "ok": true,
+   "value": "{'union': (True, 4), 'cumopen': (True, 4), 'cumtight': (True, 4)}"
+  },
+  "V2_开关双向": {
+   "ok": true,
+   "value": "{'union': 0, 'cumopen': 1336588, 'cumtight': 641284}"
+  },
+  "V3_保证零违约_最终点": {
+   "ok": true,
+   "value": "violations=0"
+  },
+  "V3b_admission不变量": {
+   "ok": true,
+   "value": "charged>B̃ 账户数=0"
+  },
+  "V3c_全轨迹fail_closed": {
+   "ok": true,
+   "value": "缺 cum_gap_max 的有效账户=0(最终轮须为 0)"
+  },
+  "V4_紧预算会关": {
+   "ok": true,
+   "value": "tight_fallback_calls=770664, fb中位 tight=0.842 open=0.339"
+  },
+  "V5_异SLA机制对照": {
+   "ok": false,
+   "value": "open=0.339 < union=0.315"
+  },
+  "V6_开销≤10%": {
+   "ok": true,
+   "value": "{'union': 344.5, 'cumopen': 357.1, 'cumtight': 339.5}"
+  }
+ },
+ "descriptive": {
+  "union_vs_cumopen_output_divergent": 3,
+  "note": "覆盖收益来自保证对象更换(逐事件族→累计),非同保证下的免费收益;累计覆盖随机部分,确定性条目由逐条目硬门+fail-closed 审计管"
+ },
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "local",
+  "stack": "local verdict (no compute)",
+  "code": "0e71afa-dirty",
+  "tree": "4b07152d5f43",
+  "dirty": true,
+  "run_id": "w3av3_verdict",
+  "seed": null,
+  "started_at": "2026-08-07T10:41:17Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3av3_verdict.py"
+}

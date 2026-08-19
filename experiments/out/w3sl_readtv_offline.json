@@ -1,0 +1,106 @@
+{
+ "what": "W3-SL 逐读 served-TV 离线实测:真实数据验证 tanh 界 + 真实量级",
+ "preregistered": {
+  "V1_tanh_sound": "∀ TV_real ≤ tanh(ε)+1e-6(机检界应 100%)",
+  "V2_tanh_half": "报 tanh(ε/2) 违反率(真 sup conjecture)",
+  "V3_nonvacuous": "部署 m=2 TV_real 中位<1 且 e-form 空洞率>tanh 空洞率"
+ },
+ "verdict": "readtv_tanh_validated_nonvacuous",
+ "deploy_mask": 2,
+ "per_m": {
+  "2": {
+   "n_pairs": 528384,
+   "eps_median": 0.2581748962402344,
+   "eps_p99": 0.7220356464385986,
+   "eps_max": 1.378788948059082,
+   "tvreal_median": 0.03415940701961517,
+   "tvreal_p99": 0.10326346009969711,
+   "tvreal_max": 0.2893984317779541,
+   "viol_tanh": 0,
+   "viol_tanh_half": 0,
+   "vac_frac_eform": 0.0669475230135659,
+   "vac_frac_tanh": 0.0
+  },
+  "3": {
+   "n_pairs": 528384,
+   "eps_median": 0.49480897188186646,
+   "eps_p99": 1.3147478103637695,
+   "eps_max": 2.0301413536071777,
+   "tvreal_median": 0.06935642659664154,
+   "tvreal_p99": 0.19914841651916504,
+   "tvreal_max": 0.3140776753425598,
+   "viol_tanh": 0,
+   "viol_tanh_half": 0,
+   "vac_frac_eform": 0.41790818798449614,
+   "vac_frac_tanh": 0.0
+  },
+  "4": {
+   "n_pairs": 528384,
+   "eps_median": 1.0788381099700928,
+   "eps_p99": 2.6619625091552734,
+   "eps_max": 3.836549758911133,
+   "tvreal_median": 0.16658103466033936,
+   "tvreal_p99": 0.5766899585723877,
+   "tvreal_max": 0.7063742876052856,
+   "viol_tanh": 0,
+   "viol_tanh_half": 0,
+   "vac_frac_eform": 0.9293411609738372,
+   "vac_frac_tanh": 0.0
+  }
+ },
+ "caliber": [
+  "V4-Flash 合成池(同层 rank0 合并,无 uid);score 仅 nope 448 维(rope 近似)",
+  "SR 随机档逐 draw 实现扰动;NDRAWS=16",
+  "**逐读注意力段** served TV(单 softmax);累计最终 logit E_out 需全前向(GPU)",
+  "绝对量级为本捕获池口径,不作跨模型/serving 声明",
+  "tv_le_tanh 是机检定理 ⟹ V1 应 0 违反;违反=码/数据错位(红)"
+ ],
+ "inputs": [
+  {
+   "path": "out/wc_e1raw.rank0.pt",
+   "sha256_16": "ee1fc25b0064ce1f"
+  },
+  {
+   "path": "out/wc_e1raw.rank1.pt",
+   "sha256_16": "b3c63b51a83024c9"
+  },
+  {
+   "path": "out/wc_e1raw.rank2.pt",
+   "sha256_16": "cb6f3002af23c1e8"
+  },
+  {
+   "path": "out/wc_e1raw.rank3.pt",
+   "sha256_16": "3774b6c8786d54df"
+  },
+  {
+   "path": "out/wc_e1raw.rank4.pt",
+   "sha256_16": "9120c1066c33a9d3"
+  },
+  {
+   "path": "out/wc_e1raw.rank5.pt",
+   "sha256_16": "4e4ec38a1fba4700"
+  },
+  {
+   "path": "out/wc_e1raw.rank6.pt",
+   "sha256_16": "7b0f9ad9cd1e3510"
+  },
+  {
+   "path": "out/wc_e1raw.rank7.pt",
+   "sha256_16": "7635c1f4fceeec22"
+  }
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "unset",
+  "stack": "local cpu offline (torch)",
+  "code": "21f8661",
+  "tree": "9b8b1844a238",
+  "dirty": false,
+  "run_id": "w3sl_readtv",
+  "seed": 7,
+  "started_at": "2026-08-07T16:49:21Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3sl_readtv_offline.py"
+}

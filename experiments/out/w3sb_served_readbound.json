@@ -1,0 +1,68 @@
+{
+ "what": "W3-SB:①c 逐读 served-TV tanh 紧化 → 非空洞(p76 自洽实例化)",
+ "lean": {
+  "core": "WitCert.Calculus.tv_chord_bound (弦引理,纯分布)",
+  "tanh_bound": "WitCert.Calculus.tv_le_tanh / softmax_tv_bridge_tanh",
+  "gate_served": "WitCert.Calculus.served_tv_le_of_gate_tanh",
+  "status": "machine-checked (lake build 全树通过)",
+  "note": "tanh(ε) 机检;真 sup tanh(ε/2) 数值验证(两块极值精确达),其证明需 Z 耦合,暂列 conjecture"
+ },
+ "inputs": {
+  "a_q": 1.0034,
+  "W_sampled_max": 0.7003,
+  "eps_worstkey": 0.7026810200000001,
+  "src": "p76_bridged_composition.json(a_q 与 W 同一 p76/p75 探针,自洽)",
+  "caliber_fix": "不混 w3av6 armed 的 wthr=35.34(异模型 V4-Flash,见证尺度 8~16;其 served-TV 待测 V4-Flash a_q)"
+ },
+ "verdict": "readbound_nonvacuous_via_tanh",
+ "summary": {
+  "tv_eform_worstkey": 1.5385012560484257,
+  "tv_tanh_worstkey": 0.6060667696668165,
+  "tv_tanh_half_worstkey": 0.33756384109909376,
+  "eform_vacuous": true,
+  "tanh_nonvacuous": true,
+  "sla_to_threshold": {
+   "30pct": {
+    "tstar": 0.3,
+    "wthr_star_proven": 0.3084708034713093,
+    "wthr_star_tight": 0.6169416069426186
+   },
+   "10pct": {
+    "tstar": 0.1,
+    "wthr_star_proven": 0.09999536349519192,
+    "wthr_star_tight": 0.19999072699038384
+   },
+   "5pct": {
+    "tstar": 0.05,
+    "wthr_star_proven": 0.049872163921159327,
+    "wthr_star_tight": 0.09974432784231865
+   },
+   "1pct": {
+    "tstar": 0.01,
+    "wthr_star_proven": 0.009966447432065739,
+    "wthr_star_tight": 0.019932894864131478
+   }
+  }
+ },
+ "caliber": [
+  "worst-key 口径(采样最大见证);读时逐键 E_p̃[·] 更紧,经验 0.935 反映后者",
+  "a_q 是查询包络(采样统计量,非硬上确界)",
+  "只覆盖窗口(swa)条目;压缩页条目分数未见证(roadmap A6)",
+  "p76 无门控 ⟹ 这是**采样**界;门控认证版=Lean 定理(需同模型 a_q,wthr)",
+  "累计 served-TV 仍开放(TV 跨读不可加)"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "unset",
+  "stack": "local offline served-readbound analysis",
+  "code": "b215945",
+  "tree": "49184d9dc171",
+  "dirty": false,
+  "run_id": "w3sb_served_readbound",
+  "seed": null,
+  "started_at": "2026-08-07T16:15:22Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3sb_served_readbound.py"
+}

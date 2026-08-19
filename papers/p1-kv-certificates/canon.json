@@ -1,0 +1,2768 @@
+{
+ "generated_by": "tools/make_canon.py",
+ "entries": [
+  {
+   "group": "理论",
+   "name": "反例倍数",
+   "value": "7.8",
+   "scope": "两 token 反例:真实 TV 是错误式给出的『界』的 7.8 倍",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "理论",
+   "name": "错误式通过的检查组数",
+   "value": "32,256",
+   "scope": "均值口径检查数;逐 query 检查才暴露问题",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "理论",
+   "name": "Lean 主定理数",
+   "value": "4",
+   "scope": "Mathlib 层 L1–L4,公理仅 propext/Classical.choice/Quot.sound;由 lean_extract 抽取",
+   "headline": true,
+   "paper": 1,
+   "source": "papers/p1-kv-certificates/theorems.json:n_main"
+  },
+  {
+   "group": "理论",
+   "name": "机器检查定理总数",
+   "value": "34",
+   "scope": "Mathlib 层 25 + 零依赖层 9;由 formal/Export.lean 用 Lean 自己的 pretty-printer 与 collectAxioms 导出,陈述编译进 papers/p1-kv-certificates/THEOREMS.md 与 papers/p1-kv-certificates/arxiv/theorems.tex",
+   "headline": true,
+   "paper": 1,
+   "source": "papers/p1-kv-certificates/theorems.json:n_total"
+  },
+  {
+   "group": "理论",
+   "name": "公理并集",
+   "value": "Classical.choice、Quot.sound、propext",
+   "scope": "collectAxioms 机器给出,无 sorryAx",
+   "headline": false,
+   "paper": 1,
+   "source": "papers/p1-kv-certificates/theorems.json:axioms_union"
+  },
+  {
+   "group": "RULER门控CI",
+   "name": "fp8 门控配对差",
+   "value": "+0.3 [+0.0,+0.8]",
+   "scope": "逐样本配对 vs 满血,150 样本,bootstrap 10⁴;risk-ranked τ=5",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控CI",
+   "name": "int8/kivi 门控配对差",
+   "value": "0.0",
+   "scope": "两配置与满血在每个样本上判分完全一致(配对差恒 0)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控CI",
+   "name": "fp8 裸跑配对差",
+   "value": "-56.6 [-64.1,-49.1]",
+   "scope": "崩塌统计显著",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控CI",
+   "name": "kivi 裸跑配对差",
+   "value": "-8.1 [-13.8,-2.6]",
+   "scope": "静默尾部从轶事升级为统计显著;复跑均值 71.3(原切片 73.7,run-to-run 漂移)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "128k覆盖率",
+   "name": "8k 区间",
+   "value": "63.7–64.5%",
+   "scope": "Qwen2.5-1.5B,两域拼接流,P17 同配置,δ=10⁻²,KV-head any-of-G",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "128k覆盖率",
+   "name": "32k 区间",
+   "value": "57.3–60.0%",
+   "scope": "同上",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "128k覆盖率",
+   "name": "128k 区间",
+   "value": "26.6–41.3%",
+   "scope": "同上,YaRN factor=4(厂商官方长上下文配置);tanh 参考塌到 ≤0.2%",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "128k覆盖率",
+   "name": "128k tanh 上限",
+   "value": "0.2%",
+   "scope": "128k 下确定性 tanh 界的最好域",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "128k覆盖率",
+   "name": "违约",
+   "value": "0",
+   "scope": "三档 × 两域全部零违约(soundness 第四条独立证据链)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "双侧界",
+   "name": "有效档中位反松",
+   "value": "1.7×",
+   "scope": "rtn-8bit(有效档)双侧聚合形/旧 e-form 的中位比;双侧形在小 c 区二阶劣化",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "双侧界",
+   "name": "有效档胜出比例",
+   "value": "1.6%",
+   "scope": "rtn-8bit,双侧形更紧的单元占比",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "双侧界",
+   "name": "coverage 变化",
+   "value": "0.445→0.446",
+   "scope": "τ=0.2,min(1,旧,双侧,逐token min) 相对旧界;实质无变化",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "双侧界",
+   "name": "min形数值soundness",
+   "value": "0/26,880",
+   "scope": "全部六量化器单元 meter ≥ 真 TV 的违约计数",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "双侧界",
+   "name": "饱和档最大缩减",
+   "value": "26,433×",
+   "scope": "rtn-2bit 中位缩减(但仍远高于 1,meter 恒饱和,无操作点变化)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "δ曲线",
+   "name": "subG 覆盖率区间",
+   "value": "54.4–81.0%",
+   "scope": "三模型族(Qwen2.5-7B/Mistral-7B/Yi-1.5-6B)×三域,固定 δ=10⁻²,域内均值,KV-head any-of-G",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "δ曲线",
+   "name": "tanh 覆盖率区间",
+   "value": "11.8–52.0%",
+   "scope": "同上,确定性 tanh 界",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "δ曲线",
+   "name": "换页率相对下降",
+   "value": "28.7–77.0%",
+   "scope": "δ=10⁻² 下相对 tanh",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "δ曲线",
+   "name": "δ 收紧 500× 最大损失",
+   "value": "3.2pp",
+   "scope": "5×10⁻²→10⁻⁴,六个模型×域组合的最大值",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "δ曲线",
+   "name": "模型族数",
+   "value": "3",
+   "scope": "Qwen2.5-7B(8k)/Mistral-7B(8k)/Yi-1.5-6B(4k,受其位置上限)",
+   "headline": true,
+   "paper": 1,
+   "source": "derived:三族枚举,清单即口径"
+  },
+  {
+   "group": "RULER-4k",
+   "name": "WitCert 均分",
+   "value": "94.42",
+   "scope": "13 任务均值,Qwen2.5-7B,1300 样本,字节预算 46.5%",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER-4k",
+   "name": "满血均分",
+   "value": "94.30",
+   "scope": "no_press",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER-4k",
+   "name": "EA 均分",
+   "value": "93.88",
+   "scope": "expected_attention,其 compression_ratio=0.401 = 丢 40.1% token",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER-4k",
+   "name": "差值",
+   "value": "+0.53",
+   "scope": "配对 bootstrap p≈0.12,**不显著**;两列预算量纲不同",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER-4k",
+   "name": "字节节省",
+   "value": "46.5%",
+   "scope": "K 145.1B + V 129B = 274.1B vs fp16 512B",
+   "headline": true,
+   "paper": 1,
+   "source": "derived:1-274.1/512,字节数见口径"
+  },
+  {
+   "group": "LongBench-E",
+   "name": "长度桶数",
+   "value": "15",
+   "scope": "5 任务 × 3 桶;lcc_e 三配置全部运行失败未计入",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "LongBench-E",
+   "name": "WitCert 跌幅>1pp 桶数",
+   "value": "WitCert 1/15",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "LongBench-E",
+   "name": "EA 跌幅>1pp 桶数",
+   "value": "EA 4/15",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "LongBench-E",
+   "name": "2wikimqa 4-8k WitCert",
+   "value": "−3.23",
+   "scope": "唯一实质下降",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "LongBench-E",
+   "name": "2wikimqa 4-8k EA",
+   "value": "−7.79",
+   "scope": "同桶,我们的 2.4 倍",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "LongBench-E",
+   "name": "对我方不利处",
+   "value": "+4.36",
+   "scope": "EA 在 hotpotqa_e 8k+ 明显更好(如实列出)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "质量",
+   "name": "抖动增益(质量中性)",
+   "value": "1.01×",
+   "scope": "真实 V,Qwen2.5-7B/8k;抖动本身质量中性",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "质量",
+   "name": "离群旁路增益",
+   "value": "1.38×",
+   "scope": "同上",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "四联报覆盖率",
+   "value": "79.2%",
+   "scope": "S=32768,nq=24,τ=0.2,合成 K",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "四联报时延",
+   "value": "8.627",
+   "scope": "ms",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "四联报加速比",
+   "value": "5.41×",
+   "scope": "**kernel 级;不可作为部署代价引用**,端到端见 serving 表",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "四联报误差",
+   "value": "9.0e-3",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "真实显存节省",
+   "value": "43.3%",
+   "scope": "torch.cuda.memory_allocated 实测,8k/32k/128k 一致",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "回退后误差",
+   "value": "3.32e-4",
+   "scope": "回退前 9.18e-3",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "有效位宽",
+   "value": "10.96",
+   "scope": "门控后,净省 31.5%",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "块级换页流量降低",
+   "value": "128×",
+   "scope": "中位 1/128 块即回落阈值",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "长 CoT KV 头覆盖率",
+   "value": "0.800",
+   "scope": "R1-Distill-7B 真实生成,n=4;与常规长文 0.792 持平",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "随机舍入分支覆盖率",
+   "value": "0.000",
+   "scope": "所有离群预算下恒为 0 ⟹ 被数据否决",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "m=4 覆盖率(实机)",
+   "value": "0.792",
+   "scope": "S=32768,τ=0.2,合成 K",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "m=8 覆盖率(实机)",
+   "value": "0.958",
+   "scope": "S=32768,τ=0.2,合成 K",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "kernel",
+   "name": "m=16 覆盖率(实机)",
+   "value": "1.000",
+   "scope": "S=32768,τ=0.2,合成 K",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "端到端解码",
+   "name": "m=16 覆盖率",
+   "value": "1.000",
+   "scope": "HF Cache,28 层,真实 query",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "端到端解码",
+   "name": "m=16 KL",
+   "value": "4.16e-3",
+   "scope": "teacher-forcing",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "端到端解码",
+   "name": "m=16 top-5 重叠",
+   "value": "0.981",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "端到端解码",
+   "name": "m=16 最大证书",
+   "value": "0.086",
+   "scope": "距 τ=0.2 有 2.3× 余量",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "scale粒度",
+   "name": "论文口径误差",
+   "value": "2.449e-2",
+   "scope": "逐块逐通道,分页不兼容",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "scale粒度",
+   "name": "G=32 相对论文",
+   "value": "0.87×",
+   "scope": "逐 token 逐 32 通道组,分页兼容且更准",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Qwen 通道稳定性 Jaccard",
+   "value": "0.940",
+   "scope": "前半/后半 token 各选 top-8 对",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Qwen m=0 覆盖率",
+   "value": "0.525",
+   "scope": "S=4096,τ=0.2,逐 token 组 scale",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Qwen m=4 覆盖率",
+   "value": "0.843",
+   "scope": "已排除 amax",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Qwen m=16 覆盖率",
+   "value": "0.980",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Yi 通道稳定性 Jaccard",
+   "value": "0.880",
+   "scope": "前半/后半 token 各选 top-8 对",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Yi m=0 覆盖率",
+   "value": "0.907",
+   "scope": "S=4096,τ=0.2,逐 token 组 scale",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Yi m=4 覆盖率",
+   "value": "1.000",
+   "scope": "已排除 amax",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "Yi m=16 覆盖率",
+   "value": "1.000",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "只旁路不排除 amax 的降幅",
+   "value": "8%",
+   "scope": "证书上界只降 8% ⟹ 必须同时排除",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "离群旁路",
+   "name": "旁路+排除 amax 的降幅",
+   "value": "32×",
+   "scope": "合成对照:证书最大 2.378 → 0.0731",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "满血 avg",
+   "value": "79.3",
+   "scope": "6 难任务×25样本=150条,7B,SGLang观测台",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "fp8 裸跑 avg",
+   "value": "22.8",
+   "scope": "灾难级;零分样本 114/150",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "fp8 门控 avg",
+   "value": "79.7",
+   "scope": "τ_gate=5;零分回到 19(=满血);PCIe 26.1 GiB 一次性",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "kivi 裸跑 avg",
+   "value": "73.7",
+   "scope": "尾部损伤:零分 28 vs 满血 19(9 个静默失败)",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "kivi 门控 avg",
+   "value": "79.3",
+   "scope": "9 个静默失败全部消除;PCIe 30.5 GiB",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "int8 门控 PCIe",
+   "value": "7.7 GiB",
+   "scope": "安全方案流量比 fp8 少 3.4×(增量持久修复;选择性在规模上成立)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "RULER门控",
+   "name": "增量修复流量降幅",
+   "value": "41×",
+   "scope": "整请求重换页 bug 修复:fp8_gate02 1267→30.9 GiB",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "机理",
+   "name": "单层污染有损层数",
+   "value": "0/28",
+   "scope": "kivi2 逐层单独污染,needle 1.5B;全部无损 ⟹ 无关键层,失败纯来自跨层累积",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "机理",
+   "name": "全层污染 acc",
+   "value": "0.958",
+   "scope": "对照:单层全部 1.0",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "机理",
+   "name": "kvquant4 覆盖率",
+   "value": "0.00066",
+   "scope": "第二个真实方法复刻:needle 满分但逐步认证不可得,与 KIVI 互证",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "重复性",
+   "name": "满血三切片均值",
+   "value": "83.3",
+   "scope": "79.3/87.2/83.4;所有方向性结论三切片复现",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "重复性",
+   "name": "fp8裸跑三切片均值",
+   "value": "26.4",
+   "scope": "22.8/27.8/28.7 —— 灾难在每个切片复现",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "重复性",
+   "name": "门控距满血差距",
+   "value": "0.4",
+   "scope": "fp8/kivi 门控三切片均值与满血差 ≤0.4;kivi 额外零分(+9~+12)全消",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "界形对照",
+   "name": "det门 fp8 PCIe",
+   "value": "12.1 GiB",
+   "scope": "τ=0.99,同见证输入;e-form 同 τ 为 30.8 GiB ⟹ Tier-A 档 det-tanh 门便宜 2.5×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "界形对照",
+   "name": "det门 int8 PCIe",
+   "value": "5.3 GiB",
+   "scope": "e-form 同 τ 27.3 GiB(5.2×);两界形质量均恢复(79.3–80.1)。受控抖动器档 e-form 反超",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B fp16 容量",
+   "value": "650,368",
+   "scope": "page_size=16,mem_frac 0.88,batch16×64tok",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B WitCert 容量",
+   "value": "1,224,240",
+   "scope": "1.88×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 容量倍率",
+   "value": "1.88×",
+   "scope": "同显存预算",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 吞吐倍率",
+   "value": "0.75×",
+   "scope": "3 次取中位数",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 覆盖率(无旁路)",
+   "value": "0.812",
+   "scope": "生产遥测,抽样 stride 32",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 旁路容量",
+   "value": "1,095,360",
+   "scope": "1.68×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 旁路覆盖率",
+   "value": "0.940",
+   "scope": "m=4 固定通道集",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "1.5B 证书边际(带旁路)",
+   "value": "2.4%",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B fp16 容量",
+   "value": "114,128",
+   "scope": "page_size=16,mem_frac 0.88,batch16×64tok",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B WitCert 容量",
+   "value": "214,832",
+   "scope": "1.88×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 容量倍率",
+   "value": "1.88×",
+   "scope": "同显存预算",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 吞吐倍率",
+   "value": "0.82×",
+   "scope": "3 次取中位数",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 覆盖率(无旁路)",
+   "value": "0.753",
+   "scope": "生产遥测,抽样 stride 32",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 旁路容量",
+   "value": "192,224",
+   "scope": "1.68×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 旁路覆盖率",
+   "value": "0.946",
+   "scope": "m=4 固定通道集",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "7B 证书边际(带旁路)",
+   "value": "11.8%",
+   "scope": "",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "证书边际(1.5B 无旁路)",
+   "value": "6.4%",
+   "scope": "短序列 decode;长序列微基准是 +0.35%",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "证书边际(7B 无旁路)",
+   "value": "16.2%",
+   "scope": "同上",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "kernel 级证书成本",
+   "value": "+0.35%",
+   "scope": "S=4096 微基准,量化存储路径",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "fp16 路径证书成本",
+   "value": "+11.9%",
+   "scope": "SGLang decode kernel,存储未量化时",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "写路径 Triton 加速",
+   "value": "82×",
+   "scope": "torch 版在 decode 循环里会主导时延(63.7→575.9 tok/s)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "serving",
+   "name": "补丁行数",
+   "value": "500 / 155 / 327",
+   "scope": "decode / extend / serving 接线,三份可提 PR;行数由 freeze_integration_stats 现算冻结进产物,不手抄",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "自适应违约(自由解码)",
+   "value": "0/1000",
+   "scope": "Qwen2.5-7B,50 prompts×20 seeds,prefill 4096,decode 64,δ_req=1e-2",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "自适应监测 cell 总数",
+   "value": "100,352,000",
+   "scope": "每步×每层×每 q-head,free+forced 双模式;数值容差 1e-9,零容差残余全部 |边际|≤1.8e-13",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "自适应轨迹分歧率",
+   "value": "62.9%",
+   "scope": "free 组与 fp16 基线分歧,中位第 22 步;rule-of-three 上界 0.3%",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "最坏 TV/界比",
+   "value": "0.536",
+   "scope": "全部 informative cell 上取最大",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "RC 对照 Δppl",
+   "value": "+0.0059",
+   "scope": "Llama-3.1-8B,ctx8192×8 配对窗;WitCert 同框 +0.0123",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "RC 页入",
+   "value": "264 MB/请求",
+   "scope": "RC 快路径常态促升页入(RULER-4096);WitCert 认证态为 0,且无 CPU 常驻副本",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "packed 门控闭环质量",
+   "value": "78.83",
+   "scope": "RULER 6 难任务×25,τ=0.2;= packed 无门控 78.83,fp16 78.67",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "门控逐请求页入 P50/P95",
+   "value": "2.81 / 3.58 GiB",
+   "scope": "串行差分口径,150 请求;packed 修复非持久化固有成本",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "容量比跨规模/并行不变",
+   "value": "1.882×",
+   "scope": "7B/14B/32B(单卡)、70B(tp4)、7B(tp2/tp4) 全部 1.8824×;结构决定",
+   "headline": true,
+   "paper": 1,
+   "source": "p44_serving_rows.json:kv_capacity witcert/fp16 三对现算,断言一致"
+  },
+  {
+   "group": "H200战役",
+   "name": "70B tp4 容量",
+   "value": "2,183,776",
+   "scope": "fp16 1,160,128;吞吐比 0.79×",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "原生 128k 覆盖率(needle)",
+   "value": "77.0 / 77.1 / 77.0%",
+   "scope": "Llama-3.1-8B 原生窗口(无 YaRN)@8k/32k/128k,零违约——随长度平坦;1.5B+YaRN 档的下滑为 YaRN 外推特有",
+   "headline": true,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "前沿最不利工况点",
+   "value": "0.43×",
+   "scope": "c=512 短请求(1024in/256out):witcert 6206 vs fp16 14324 tok/s;单流 0.78×,tp2 反超",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "长上下文代价比例平稳",
+   "value": "1.84×→1.89×",
+   "scope": "Llama-8B witcert TTFT 中位比 @8k→32k(TPOT 1.47×→1.49×),不随 S 恶化;qwen7b cert-on 30k TPOT 异常已列工程项",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "H200战役",
+   "name": "72B 覆盖率",
+   "value": "25.5–29.8%",
+   "scope": "jkv@δ=1e-2 三域,零违约;显著低于 7–32B(54–81%),削弱性结果如实报告(与 Yi 同型)",
+   "headline": false,
+   "paper": 1,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "latent 尺子 cells",
+   "value": "4,032",
+   "scope": "V2-Lite S=4096,9 文档×3 域,7 层采样×头步 2(MLA latent 数学验证)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "latent int8 双 Tier 违约",
+   "value": "0/4,032",
+   "scope": "Tier A 零违约;Tier A soundness 由此承担,在线观测只给量级与紧度",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "latent dither Tier B 覆盖率",
+   "value": "98.9%",
+   "scope": "τ=0.2;τ=0.5 时 100%",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "GLM 生产 fp8 相对残差",
+   "value": "0.93%",
+   "scope": "GLM-5.2 W4AFP8 生产栈在线观测,78 层×8 rank,相对 latent 范数",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "GLM latent 层间异质",
+   "value": "493×",
+   "scope": "latent 范数最大/最小之比,异构策略论据",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "坏块哨兵假阳性率",
+   "value": "0%",
+   "scope": "144 次基线校验零告警;注入坏块被逐槽位定位(论文2 引言动机实验)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "DSA top-1 认证率",
+   "value": "99.26%",
+   "scope": "GLM-5.2,η=1e-3,21 层×103,516 行;逐层区间 90.0–100%",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "DSA 严格集合认证率",
+   "value": "0.05%",
+   "scope": "top-2048 集合口径过强(负结果);认证内翻转恒 0",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 条目二次量化 int8 残差",
+   "value": "0.628%",
+   "scope": "43/43 层×92,791 行;与 GLM 生产 fp8 的 0.93% 同量级",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 带范数见证保守度",
+   "value": "3.51×",
+   "scope": "W/‖Δ‖,B=16,int8;逐层 2.73–3.86",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 页级 top-1 认证率",
+   "value": "99.40%",
+   "scope": "η=1e-3,21 个 C4 索引层;V4 选压缩页,与 DSA 的 token 级量纲不可直接比",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "KDA 收缩因子 ā",
+   "value": "0.530–0.936",
+   "scope": "Kimi-Linear-48B 代理,20/20 KDA 层全部 ā<1;半衰期 1.1–10.4 步;逐层标量近似口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "KDA 近 1 通道占比",
+   "value": "0.0–28.7%",
+   "scope": "P(a_t≥0.999) 逐层区间;这些通道上界退化为线性累积 ⇒ 界须逐通道给,属紧度限制而非 soundness 问题",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "哨兵单块检出概率",
+   "value": "0.881",
+   "scope": "有效轮数 n≈17(注入 rank 注入后的校验轮数,非全 rank 总和),每轮抽 128/1024;超几何闭式",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "哨兵检出 2/4 的概率",
+   "value": "0.072",
+   "scope": "'至多检出 2 个'的概率;实测 2/4 属正常涨落,是抽样受限而非能力上限",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "哨兵检出延迟旋钮",
+   "value": "148 / 74 / 37 / 19 轮",
+   "scope": "B=1、δ=1e-2 时 r=32/64/128/256 所需轮数;检出延迟与抽样预算近似成反比",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 池化粒度",
+   "value": "4 与 128 并存(21/20 层)",
+   "scope": "同一模型内两种 hc 池化块大小;1/block 差 32 倍,跨层比较必须用归一化量",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 池化集中度(block4)",
+   "value": "0.1551",
+   "scope": "top1_norm 中位(0=完全均摊,1=完全主导);有效 token 3.65/4;经验观测,不称证书",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "选择段契约 b_S",
+   "value": "0.00203",
+   "scope": "Lemma S2:(a_S,b_S)=(1,½(m_out+m_in));η=1e-3,V4 C4 索引器 21 层中位;选择段**加性不放大**上游误差",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "V4 三路自检违反",
+   "value": "0",
+   "scope": "见证违约 + 认证内翻转 + 池化不变量违反合计;存储侧 sound / 选择侧条件认证 / 池化侧无认证",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "自适应采样覆盖地板兜底",
+   "value": "0",
+   "scope": "高负载阶段触发次数;0 表示 every 一直在安全区。覆盖两阶段均 43 层未塌 —— 地板存在的意义是覆盖塌陷没有免费警报,不是它常被触发",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "并发下探针开销(EVERY=64)",
+   "value": "吞吐 -3.9% / TTFT P99 +10.5%",
+   "scope": "并发 1/8/32/64,每档 3 次重复取中位;**均在逐档噪声以内** —— 只能给上界不能给点估计;关图口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "并发下探针开销(EVERY=16)",
+   "value": "吞吐 -19.6% / TTFT P99 +140.8%",
+   "scope": "**双双超出噪声,是可主张的真实退化**;故常开生产档位取 EVERY=64 不取 16",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "图重放期累加(graph-safe)",
+   "value": "Δ元素 43176 / Δn_calls 168",
+   "scope": "**带图运行**(未加 disable-cuda-graph)。CUDA graph 重放不执行 Python,故 n_calls 只涨 prefill 的 168 次,而设备累加器涨满 43008 次 decode 重放 + prefill;两者与预期分毫不差,静置后不再变化。**判据是累加器在重放期继续增长,不是带图下的开销** —— 开销数字仍是关图口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "带图全速探针开销(EVERY=1)",
+   "value": "吞吐 -52.8% / TTFT P99 +138.6%",
+   "scope": "**带图口径**,单卡 Qwen2.5-7B + gqa-kv,并发 1/8/32 各 3 次重复取中位。EVERY=1 是唯一被验证过在重放期有完整覆盖的档位,故这是带图成本的**上界**。**与论文关图数字栈不同,不可相减**",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "带图下 EVERY=64 的重放增量",
+   "value": "0",
+   "scope": "跑完整轮负载后累加器增量为 0,判定 NO_REPLAY_COVERAGE —— **采样门是 capture 时求值一次的 Python 分支**,开图后 EVERY 的语义从'每 N 次采一次'变成'这张图采不采'。该档层覆盖仍显示 28/28(起服期陈旧样本),验收门原本会放行,故新增设备侧执行计数与 --expect-replay 才能拦住",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "带图最省档探针开销(1 层 × 单量化档)",
+   "value": "吞吐 -2.26% / TTFT P99 +1.32%",
+   "scope": "**带图口径**,capture 时按层号选择性插桩(确定性旋钮),**未用融合算子**。重放累加与层覆盖对账均通过 —— 不是'探针不在图里'的免费。仍超出 c=32 档的噪声下界,故仅靠减插桩点**压不进噪声**;把 kernel 数压到 1 之后的同覆盖档见'带图常开档'",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "带图常开档(融合算子,1/28 层)",
+   "value": "吞吐 -0.94% / TTFT P99 -0.14%",
+   "scope": "**三条判据同时满足**:重放累加为真、退化在逐档噪声下界内、层覆盖与声明一致。**成立的是'1 层常开'不是'全层常开'** —— 同为融合算子,全 28 层仍要 -10.16%",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "融合算子在全层覆盖下的收益",
+   "value": "5.2×",
+   "scope": "同为 28/28 层带图运行:torch 版 -52.81%,融合版 -10.16%。**kernel 数是成本的驱动量**,这是把它从几十压到 1 的直接收益",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "带图插桩成本的标度",
+   "value": "1.72×",
+   "scope": "同为 2 层,量化档从 2 减到 1 的吞吐成本之比 —— 另:同为单量化档,层数 2->1 的比为 1.97×。**成本 ≈ 层数 × 每次执行的 kernel 数,两个旋钮各自近似线性且可乘**;故开图后的成本驱动量是 kernel 数,不是采样率",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "融合见证算子的数值等价",
+   "value": "9.3e-07",
+   "scope": "融合 Triton 版与 torch 版在四组形状上的最大相对误差(mean/min/max);**viol 计数与样本数完全相等** —— viol 是 soundness 自检,不容许近似。舍入取 away-from-zero 而非 torch 的银行家舍入,仅在精确 .5 处不同(测度为零)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "融合见证算子单调用耗时",
+   "value": "12.3 us",
+   "scope": "对 torch 单量化档 24.2×、双量化档 44.6×;**第一版用 grid=(1,) 想避开原子操作,反而 346us 比 torch 还慢** —— 拿并行度换原子操作是亏本买卖,改按行分块 + 三维分带归约才拿到这个数",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "全链逐层注意力 TV 界(typical)",
+   "value": "0.992",
+   "scope": "存储(窗口+压缩页均见证)+ 经验桥换算的选择误差,均 attn_dist:tv;c4 层(21 层)中 11 层非空洞。**组合档位 empirical**(选择段经经验桥,最弱段决定);c128 层页侧未见证分开报",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "经验桥系数 ρ",
+   "value": "0.87",
+   "scope": "注意力口径遗漏质量 / 选择器口径遗漏质量,截断集上实测;中位 0.87 接近 1(尾部 2.18,折算取 ρ_max 保守)。**选择器质量是注意力质量的可用代理** —— 外推到 η 扰动换手集是均质性假设",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "选择误差项(注意力单位)",
+   "value": "0.00444",
+   "scope": "ρ_max × b_S;empirical 档。**不是瓶颈** —— 主导是存储见证(centry max 1.040 比 swa 还大)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "C4 截断遗漏质量",
+   "value": "0.379",
+   "scope": "top-512 截断遗漏的假想全压缩注意力质量,中位(最大 0.686);**架构设计量而非误差** —— 稀疏选择是 V4 的模型语义,不计入误差链;本负载 decode 采样口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "请求级账本:保留优先工作点",
+   "value": "保留 80.1% / 每步 TV 界 1.54",
+   "scope": "**离线重放原型,非在线闭环**;条目级确定性证书(W ≤ 0.70)+ 假想局部回退;n=12,386,472 条目,c4 21 层。保留率=压缩收益保留,不称 certified coverage(其每步界空洞须一并说)。非空洞界与 ≥80% 保留不能同时成立(int8 代理见证无重尾)。Σδ=0;Lean: ledger_sound/telescope_sum/two_layer_budget_le/unknown_length_price",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "请求级账本:界优先工作点",
+   "value": "TV ≤ 0.86 / 保留 29.3%",
+   "scope": "W ≤ 0.50 的条目走压缩,其余逐条目精确读取(局部回退)。构造性:被读条目全 ≤ 阈值 ⟹ 每步 TV 界成立;探针为采样审计口径,生产化=逐读取检查(gating 补丁)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "在线影子账本:逐读取事件数",
+   "value": "198,163,408",
+   "scope": "25 条串行请求,逐请求账本在线建立;每 decode 步 × c4 层 × 全部被选中页条目(非抽样)。**只读影子**:超阈条目照常被使用,回退为假想(would_*);真实回退与概率预算消费是 A9 终局",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "在线影子账本:逐请求保留率中位",
+   "value": "0.334",
+   "scope": "W_thr=0.50;min 0.321 / max 0.701;假想页入中位 5373 MiB/请求 —— 这就是把回退做实的代价预告,与 p80 离线曲线一致",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "贪心解码重启稳定性地板",
+   "value": "6/8",
+   "scope": "off vs off2(零干预、两次独立起服):n=8 中即有分歧 —— **一切输出级对比的噪声地板**。p83 的'策略保护输出'对比缺此地板,已由本口径修正:干预效应真实(all 臂重度分歧),但 policy/dither 与基线的差异在 n=8 下处于地板附近,不可分辨;不称 protective,称 consistent with",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "写策略接受率(精度粗化)",
+   "value": "48.0%",
+   "scope": "**掩码条目占比/策略接受率 —— 非物理压缩收益**(字节数不变,是值域粗化;物理收益需打包另案)。窗口 nope 侧",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "抽签前授权:预授权率与保守代价",
+   "value": "7.8% / 6.2×",
+   "scope": "授权只看先验半径 u_e(均值项+尾项),**不看随机实现**;保守代价 = policy 事后接受率 / dither 预授权率 —— 先验尾项的价格,如实报",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "预授权违约审计",
+   "value": "0/147,208",
+   "scope": "事件 E_i='授权条目实现 W 超预授半径' 的运行时验证:全部预授条目实测违约计数;δ_i 自此**绑定真实概率事件**(五审 P0-1 修复),假设 R3′ 逐事件计数留痕",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "同请求闭环 Σδ",
+   "value": "0.0099997",
+   "scope": "读侧逐请求账本与写侧真实策略**同一次运行**;逐请求快照差分出写侧逐请求账目(每请求一行:读侧检查数/写侧压缩与回退增量/δ 增量/违约);Σδ < δ_req=0.01(望远镜),每份 δ_i 绑定事件",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "全 43 层存储项结构落账",
+   "value": "dense 2 / c4 21 / c128 20",
+   "scope": "41 个有页层的页侧全部见证(写后读回口径);L0/L1 为 ratio=0 稠密层,无压缩页是架构事实非测量省略。c128 无索引器稠密读,无选择项",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "c128 层逐层 TV 界(worst)",
+   "value": "0.976",
+   "scope": "中位;c4 侧为 1.339(含经验桥选择项)。c128 页见证 max 0.523 比 c4(1.045)干净约一倍 —— 粗压缩层反而更好认证;43 层中 18 层 worst 界 < 1",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "真实生命周期请求身份:user 请求独立预算 max Σδ",
+   "value": "0.009982",
+   "scope": "七审 F2 重做:边界 = 写路径 extend 转换(先于任何写入,无一批偏移),UID 永不复用;8 个 user 请求账户(warmup/boot 1 个分开计)全部独立 ≤ δ_req=0.01;单元测试 R5 覆盖复用+更长初始长度等漏检情形。串行 batch=1 口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "SR 随机流:跨请求零复用",
+   "value": "(nonce,UID,layer,k)",
+   "scope": "七审关键修复:种子四元组含永不复用的请求 UID —— 不同请求不共享随机数,条件随机性对自适应流量成立(Lean 超鞅前提可实例化);四元组跨 rank 一致,8-rank 账目逐字段一致(耦合保持)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "全局 e-process(跨请求不重置)",
+   "value": "峰值 -0.82 vs 阈值 4.61",
+   "scope": "持续全服务漂移哨兵:120,661 因子跨全部请求单调累积(终值 -76819.0),越阈 0 次;log_M_max 仅含更新后值(不以初始化 0 冒充峰值)。κ=0.5 预注册,δ_e=1%",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "owner 版本化:复用压力下闭环",
+   "value": "复用 11,763 次 / 读未写 0 次",
+   "scope": "G2:认证写逐槽位记录写入者 UID,复用 = 写时 owner 变更(压缩池无独立 free 路径,复用必先重写,flags 恒新鲜 —— 设计即约束,无需 allocator hook);不同 prompt 各账户 1,000+ 次复用下 foreign=0,自有闭环精确。口径:串行页回收 + 前缀共享;**请求中途驱逐**负载未覆盖",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "foreign 读归属(前缀共享)",
+   "value": "1,063,892(重复 prompt 占 974,386)",
+   "scope": "读到别的请求写入的条目按 owner 分账 —— 重复 prompt 94% 读命中前缀缓存(owner=首写请求),不再误记入本请求闭环;写侧 δ 由 owner 请求承担,读侧检查确定性 δ=0,跨请求共享不破坏预算语义",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "并发逐行身份:8 路并发独立预算",
+   "value": "max Σδ = 0.009984",
+   "scope": "G1:批内多请求混行下逐条目 UID 归属(decode 计划 [bs,16] 批行对齐 / prefill 逐 query token 前缀和分段);8 个 user 账户各自独立 ≤ δ_req=0.01;每账户独立 (nonce,uid,layer,k) 随机流;8-rank 耦合逐字段一致",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "并发归属守卫:foreign 读",
+   "value": "0/8,228,864",
+   "scope": "owner 分账做成归属正确性的**运行时守卫**:首验 foreign 3.4% 触发,定位出 c4/c128 两池共用键空间的 owner 污染(串行同刻单 uid 掩盖,并发暴露 —— 最早分配者低号槽位与 c128 数值区重叠);键按压缩比分离后8,228,864 次读 foreign=0、读未写=0",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "硬化验收门(machine-decidable)",
+   "value": "12/12 PASS",
+   "scope": "八/九审收口:**全零硬判据**(foreign/unwritten/violations/归属回退/身份 fail-closed 拦截/e-process 有数且未越阈/独立预算/账户数/8 份 rank 快照齐且耦合),判读脚本退出码承载 —— CI/发布包可直接依赖;p99 为 fail-closed 身份+违约恢复+generation 计数全部在线后的端到端复验(拦截 0/恢复 0 = 硬化机制在正常流量下惰性,只在异常时接管)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "低比特案例:packed INT4 独立池字节(GPU 实测)",
+   "value": "36.5→22.5 MiB",
+   "scope": "**独立池格式收益,非服务进程总显存**(FP8 原池仍是 FlashMLA 真实输入);64Ki token,memory_allocated 差分 −38.4%",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "低比特案例:serving 内 pack↔unpack 自洽",
+   "value": "12,960 检查 / unwritten 0 / rel 10.2%",
+   "scope": "真实 360B/token packed 池在 serving 内三跑稳定;工具证伪两条设计假设:①槽位渐进演化(只改 pack 时机误差 18×)②python 读路径非真实消费者(FlashMLA kernel 内直吃 FP8,三探 packedread=null)。**不声称**:INT4 已被 attention 消费/HBM 已降/吞吐/质量;rel_max≈4.9 归因演化期重读(近零范数假设被数据否决)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "四证书裁决:非空洞 43 层",
+   "value": "C1 0 / C2 43 / C3 6 / C4 25",
+   "scope": "认证对象=掩 2 位 SR(θ/Δ 由捕获字节离线重建);中心化 tanh(osc/4) 使全部43 层非空洞(现行形 0/43);soundness 自检:全部半径零被击穿(顶部夹取的确定性平移与零权重分支 log(0) 两个 bug 均被自检抓出后修复)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "四证书裁决:tightness(半径/实测中位)",
+   "value": "C1 15.8× / C2 5.2× / C3 2.9× / C4 2.1×",
+   "scope": "64 次 SR 实现为地面真值;现行形 15.8× 松 → 中心化/精确 MGF 2.0×(8 倍收紧)。**门1(≥30/43)过;门2(retention@0.2 ≥1.5×)败** —— 全族 retention=0,τ=0.2 在掩 2 位粒度不可达;按预注册规则 E4 重 kernel 跳过。部署分野:写时预授权 x 在手 θ 免费(精确 MGF 零元数据);读时需 θ ≈+39% 存储",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "e-process 累计收紧",
+   "value": "390×",
+   "scope": "T=33,407 事件,**双侧**累计对象(公平口径,各付 δ/2):595σ vs 望远镜求和 231,866σ。**失败事件不同**:望远镜界'任一逐事件半径被突破'(条目授权用),e-process 界有符号累计和 —— 后者是累计误差的可形式化路线,**尚未接入逐条目授权账本**(F4)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "认证写路径开销(未融合)",
+   "value": "1.20×",
+   "scope": "逐请求墙钟中位 off 26.1s → dither 31.3s;关图 + python 路径口径 —— 融合 kernel 被 E1 门2 按预注册规则挡下,此为**未优化实现的诚实成本**;物理字节不变(精度粗化非物理压缩)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "KDA 对数收缩 E[log a]",
+   "value": "-0.5912",
+   "scope": "正确判据(乘积口径)的逐层中位;均值口径 log(ā) 为 -0.2282 —— **均值把收缩算弱了 2.6×**;全 20 层 E[log a] 均为负",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "KDA 误差半衰期",
+   "value": "1.17 步",
+   "scope": "对数和判据;均值口径会报成 3.04 步。口径:E[log a] 是 (通道,时刻) 聚合,**不是逐通道 Σlog a_t** —— 近 1 通道占比中位 0.0578,其上不收缩",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "桥接后逐层注意力 TV 界(typical)",
+   "value": "0.647",
+   "scope": "**窗口存储项**,精确形 ½(e^{2ε}−1),40/43 层非空洞;ε = scale·‖q‖·W(打分桥 Cauchy–Schwarz × softmax 桥 e-form 实例化),q 范数与 W 均为采样分布统计量。**压缩页条目量化项未见证;选择段 b_S 在 selector_dist:tv,不相加**。每段 proof 指向已证 Lean 定理",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "桥接后逐层注意力 TV 界(worst)",
+   "value": "0.786",
+   "scope": "全 rank 逐层最大值口径,29/43 层非空洞;Cauchy–Schwarz 取 Δk 与 q 对齐的最坏情形 —— sound 但悲观,这是证书的代价",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "桥接系数 scale·max‖q‖",
+   "value": "1.0034",
+   "scope": "q 过 rmsnorm 后 scale·‖q‖ ≈ 1,打分桥几乎不放大;界的主导项是绝对见证 W(全层最大 0.700)。p75 实采,43 层 × 8 rank",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "请求级 TV 聚合预算",
+   "value": "36.3",
+   "scope": "43 层求和(worst 口径),>> 1 —— **空洞,如实报**。跨层求和是聚合预算而非端到端输出距离(各层是不同的分布);被类型检查废掉的 0.982 连界都不是,不能拿本数字与它比较",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "平台覆盖:过验收门的探针行",
+   "value": "8 行 / 6 模型",
+   "scope": "架构族 GQA、KDA+MLA 混合、MLA(无稀疏索引)、MLA+DSA、MLA+压缩条目+稀疏索引;适配器 6/注入点 11;收录门槛=通过覆盖->量纲->soundness 验收门",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "GLM latent 二次量化 int8 残差",
+   "value": "0.551%",
+   "scope": "统一框架,78/78 层,采样 EVERY=16;保守度中位 2.95×",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "探针开销(最不利档)",
+   "value": "+113.24%",
+   "scope": "单请求串行无并发 = 探针开销的最不利放大口径;关图状态下的**相对增量**, 不代表带图生产的端到端开销;每档 3 次重复取中位",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "matched 五臂:radix 掩蔽",
+   "value": "0.800 vs 0.050",
+   "scope": "packed 臂 radix on/off;base 两侧均 1.000 —— 0.800 是缓存命中口径非质量,confounding 由同 launcher 五臂排除",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "freshness 判别:pack-once vs every-read",
+   "value": "0.050 vs 1.000",
+   "scope": "20 篇 niah,两臂仅差 PACK_EVERY_READ 且读写双路径均有执行计数;everyread 恢复 ⇒ 代际一致性是主因(诊断配置,不作唯一归因)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "生产 pack 路径本征误差",
+   "value": "0.0245",
+   "scope": "真实 c4 条目 4,998 行/21 层,纯核/池路径/覆盖写三档同值,max 0.0304,rope 段恰 0",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "代际失效因果确认(第二次)",
+   "value": "INVALIDATION_CONFIRMED",
+   "scope": "六条机器判据全过:inval_on acc=1.000 / inval_off acc=0.200(并发 4 口径,两臂仅差失效开关,n_invalidate 双向证据);不覆盖 abort/radix-on/HiSparse/MTP/PD",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "解码侧影子:修复后 c4 保真度",
+   "value": "0.0246",
+   "scope": "内核即将读到的 packed vs 此刻 FP8 源(重填前,1/32 采样,n=33,872);本征 0.0245,对照臂 0.8816(36×) —— centry 站点同指标对本失效零区分度(双写者构造性跨代比较)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "阶段 A 池装配(规范寻址)",
+   "value": "acc 1.000",
+   "scope": "c128_kv_pool→SwappedC128Pool,20 层 remap(rank 快照 installed=1),与 noswap 臂 acc/解码侧 rel 一致 —— 结构性换池零质量代价",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "stage-B HBM 实测差分",
+   "value": "2,988 MiB",
+   "scope": "FP8 全量 c128 池→窗口环(ring_pages=257)+ packed 常驻,8 卡 aggregate 总差;核算 3,040 MiB,aggregate 相差 1.7%(逐卡 [566,346×7] 非均匀,有误差抵消,不得称逐卡吻合);c128 仅 ~0.3% 总 HBM(c4 是 32× 大头),机制验证口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "stage-B bring-up 质量(负结果)",
+   "value": "0.500 vs 1.000",
+   "scope": "6 篇 niah miss 3;HTTP n_error=0(产物 snapshot 空,**不能**声明内部 err/orphan/8rank installed —— 证据链洞,GPT review);后由 p112d 定谳为 decode 越界读环(寻址缺陷),环链是否无损未证明",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "参考消费者:packed 服务内消费",
+   "value": "26,440 行",
+   "scope": "三分类恒等式 31,560+26,440+0+240,420=298,420(rank0 聚合,逐调用去重槽);oracle/refcons acc 1.000/1.000,tol=0;SMOKE 6 docs,环 129 页,覆盖随驱逐失效语义;不称无损",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "c128 单层 staging HBM 净差",
+   "value": "316 MiB/GPU",
+   "scope": "实测中位 vs 字节净差 354.6 MiB(freed 639.2 − ring+packed 284.6);全部 untyped_storage 直读;c128 仅 ~0.3% 总 HBM,机制口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "c4 INT6 替换 HBM 净差",
+   "value": "2,108 MiB/GPU",
+   "scope": "native vs c4-staging1(formal 九门含 abort 扰动),字节净差 2,200 MiB(freed 14.24 GiB=20/21 层,张量直读);双臂 acc 1.000/1.000;SMOKE 探针配置(双图关),c128 保持原生 —— 单独口径,不与 c128/图模式数字混算",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "packed kernel 包装器调用(双图开启)",
+   "value": "5,576 次",
+   "scope": "**capture/eager 路径计数口径**(replay 执行录制内核,不回 host 计数;replay 图含 packed 分支由'capture 时所走分支'推得):c128 INT4 2,720 + c4 INT6 2,856;双臂 acc 1.000/1.000,negflag/uncovered=0,8 rank;fallback 272 已归因无压缩缓存调用;SMOKE 单 seed 受限配置",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "radix×stage-B 质量退化(复现)",
+   "value": "0.667 vs 1.000",
+   "scope": "q6c 与 q6k(全链口径)两轮独立复现;radix-off 装配门显式拒绝该组合;吞吐坍缩为日志观察无独立 bench 产物,不作性能结论",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "PD 分离:native 通过 / stage-B 布局缺口",
+   "value": "1.000 / 0.000",
+   "scope": "单机双进程(prefill TP4+decode TP4+mini-lb,mooncake);native 针跨进程答对=KV 真传输;stage-B 0/6 且 n_error=0 —— 传输完成、内核被调、服务不崩但语义错:布局契约未被传输层承载(runtime contract 必要性的实证);TP4×2 口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "重复运行答案稳定性",
+   "value": "acc 1.000/1.000",
+   "scope": "同配置串行重复对(带路由),逐题文本 5/6 不同(上游非确定推理;dsv4 不在 deterministic 白名单)——只主张答案稳定性,不主张逐字确定性",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "staging1 服务时延比值",
+   "value": "吞吐×0.884 成本×1.131",
+   "scope": "bench_serving random seed42 N=32;探针配置非生产;staging1 为逐调用全量物化未优化实现 = 上界开销;仅臂间可比,**不构成**token 成本降低声明",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "fused 解包核服务比值(含脚手架)",
+   "value": "吞吐×0.238 成本×4.201",
+   "scope": "fusedk 臂含逐调用 ensure_fresh+Python 逐槽审计(非共模诊断脚手架)—— 比值是上界**不是纯核开销**;功能面独立成立(597,981 槽审计 stale=0,质量锚 1.000)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "图模式 12-doc 探针(负结果)",
+   "value": "0.750",
+   "scope": "无 MTP、12 docs、WORKERS=4:doc 稳定漏针(15@0.5/16@0.85/18@0.5);MTP 双 seed 同树 0.667/0.500(漏针集与之高度重叠)—— 6-doc SMOKE 口径掩盖的系统性残差,cudagraph 图内消费声明由此限定为 6-doc;十四轮判别链定谳:预填压缩上下文读为必要通道且依赖 c4 环驻留(见判别链条目)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:零驱逐环下 W4 并发全对",
+   "value": "1.000",
+   "scope": "ring1025(n_evict=0)12-doc W4 = 1.000;同轮对照 ring513 = 0.833(n_evict=256)—— 腐坏驱逐介导;串行 W1(q6o)= 1.000 但 n_evict=0,'串行干净'是混杂变量(未曾行使驱逐),真不变量 = 在飞请求页被驱逐 ⇔ 腐坏",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:分池双解离定位 c4",
+   "value": "1.000 / 0.667",
+   "scope": "c128 独驱(256 次)acc=1.000 全对 vs c4 独驱(353 次)acc=0.667 —— c4 池驱逐特异;c128 驱逐无害此后又两轮复现(q6p6/q6p7 均 1.000)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:eager 写链取证无罪",
+   "value": "16,942,020",
+   "scope": "烘定-存储逐行对账 8,264,400(c128)+8,677,620(c4)行,mismatch=0,形状漂移=0 —— build→forward 间环槽从未易主;图内 finalize 撞已释放页计数亦为 0;fallback 调用全为无压缩缓存口径(extra_k_cache=None),与 c 池无关",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:预填 extra 必要性消融(收口轮)",
+   "value": "0.000 / 0.667",
+   "scope": "extra_topk_length 清零(执行自证 5,125 次)acc=0.000 全灭 vs 对照 0.667(c4 剂量带内)—— 预填压缩上下文读是任务必要通道;叠加坐标域错乱(kv-cache 坐标索引环缓冲,c4 越界 66 倍)与 14 轮驱逐剂量不变量,机制闭环:该通道数据依赖 c4 环驻留。修法=预填 extra 物化适配层(roadmap);短期口径=环≥活工作集(唯一已证干净配置)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "MTP 零驱逐口径重测(改判 PASS)",
+   "value": "1.000/1.000 与 1.000/1.000",
+   "scope": "EAGLE 1步,12-doc W4,双环 1025(quality_caliber 零驱逐自证):seed42/43 双臂全对 —— 每轮为同轮双臂受控对照,无跨轮归因需求;历史残差(q6i3 5/6、q6m 14/24)由 14 轮判别链归因为 c4 驱逐机制混杂,非 MTP 特异。矩阵 mtp 改判 PASS",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "Q10 终表数据轮(零驱逐口径,未优化物化路径)",
+   "value": "26.8 vs 173.4 tok/s",
+   "scope": "bench(32 请求,2048/128):output 吞吐 ×0.155,TTFT mean 53.7s vs 2.9s;HBM ~127.7 vs ~122.6 GiB/GPU(大环口径反超,节省被环撑大抹掉)—— 真实代价口径,收益主张不作。**质量锚 0.917(11/12):零驱逐反例** —— bench 前置使逻辑槽复用,环页仍驻留即喂前任请求行(needle_0 输出他请求暗号),'零驱逐⇒干净'必要非充分;引用本表必须带此口径",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:读侧物化修正无效(伤害通道重开)",
+   "value": "0.750 / 0.750",
+   "scope": "强制 sparse 预填分支 + stageb-r:n_translate_read=8,023,680 执行自证、orphan=0(非驻留全命中 packed),c4 驱逐 355 次 —— acc=0.750 与对照 0.750 同带同族。'预填 extra 错读是驱逐伤害媒介'证伪;与消融合并:通道必要、预填寻址非媒介 —— 修错了相位(后由 q11t2 定谳:伤害消费者= decode 侧 extra 读,见下两条)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:持久态跨臂全同(v6 内容对拍)",
+   "value": "c4 中位 0.0026(底噪 0.0021);SWA 中位 0.0016(底噪 0.0010)",
+   "scope": "L1+有序多重集度量,同配置重复对先定底噪再判读:c4(q11q,96,095 配对元素)>10% 键 1.9% vs 底噪 1.3%;SWA(q11s,181,374 元素)>10% 0.0% vs 底噪 0.0% —— 腐坏臂(0.500)与健康臂(1.000)的 c4 与 SWA 写入内容均在底噪带内,持久态全同;SWA 行是预填残差流的函数,故预填计算两臂等价,伤害只能在 decode 瞬态。前代哈希差判读(q11l)以坏度量作废",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "判别:decode extra 读侧未翻译定谳(干预确认,46 轮收官)",
+   "value": "1.000 vs 0.500",
+   "scope": "机制:decode extra 读以逻辑槽直索物理坐标的后备存储(读侧翻译执行数 n_translate_read=0;请求逻辑条目上界 8,500 > ring129 物理容量 8,256)—— 零驱逐+单请求时物理=逻辑恒等映射侥幸成立,驱逐回收/多请求共环即读到他条目内容且 written/代际审计不报警(q10a 零驱逐反例同机制)。干预:非驻留读折 -1(1,271 调用)= **诚实截断被逐条目**(~26% extra 行被弃,微缩仍全对;后续判别定谳:重映射对请求 id ≈恒等,疗效即截断本身,且时机敏感 —— 驱逐落进预填窗口时截断亦致 0.500),W1 ring129(驱逐 20)0.500→1.000,对照臂翻译计数确认为空,驱逐/调用数两臂全同。**范围口径与开放问题**:W1 微缩干预有效性确认(驱逐晚于预填时);W4 规模剂量分层四对+方差基线判定 —— 剂量随机、同剂量两臂共曲线(截断与腐坏等价伤害);九轮穷尽仪器化(选择流含底噪/服务内容/档完整性/键控/topk)全部跨臂等价后质量分裂依旧,**伤害微观机制最后一公里开放**;生产可证语义 = 零驱逐 + 请求隔离(三轮 W4 零驱逐全对)",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R8平台",
+   "name": "双池 PPL 配对(teacher-forcing)",
+   "value": "1.3496 vs 1.3495",
+   "scope": "tp4 同口径双臂(此前 base 沿用 tp8 的 p108,跨 tp logprob 有真实差,已重制):natural+code 24 篇 × 4k 前缀,98,568 token 逐 token logprob;packed(INT4/INT6 消费)ΔPPL -0.00% —— PPL 口径中性。flagship dual_pool_ppl 由 PENDING 转有数;激活双向门口径:packed 臂 消费计数为正,base 臂以 manifest 证明 packed 开关/适配器缺席",
+   "headline": false,
+   "paper": 2,
+   "source": null
+  },
+  {
+   "group": "R3五臂",
+   "name": "union 臂写侧回退率",
+   "value": "59.3",
+   "scope": "六轮(a3union×3+a3rep×3)均值百分比;NDOC=12 WORKERS=1 质量列口径(零驱逐∧无槽复用);回退报率不报绝对量(事件总数随批次波动)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/r3f1b_a3union.json:snapshot.certified_write"
+  },
+  {
+   "group": "R3五臂",
+   "name": "union 账耗尽份额",
+   "value": "99.4",
+   "scope": "delta_spent/0.01 三轮均值百分比 —— union 望远镜账在每个 12 文档请求组上近乎烧尽",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/r3f1b_a3union.json:snapshot.certified_write.delta_spent"
+  },
+  {
+   "group": "R3五臂",
+   "name": "cum 臂写侧回退率",
+   "value": "56.3",
+   "scope": "三轮均值百分比;同一 WTHR 下比 union 臂低约 3pp —— cumulative 账同质量更高覆盖",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/r3f1b_a4cum.json:snapshot.certified_write"
+  },
+  {
+   "group": "R3五臂",
+   "name": "cum 门控计数",
+   "value": "160 / 45",
+   "scope": "admit/budget-forced-fallback 三轮均值取整(区间 158-161 / 44-47);fallback>0 = 门控真会关(BNORM=7.5e5 上膛)",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/r3f1b_a4cum.json:snapshot.certified_write.cumloss"
+  },
+  {
+   "group": "R3五臂",
+   "name": "cum 峰值账占预算",
+   "value": "99.97",
+   "scope": "charged_max/BNORM 三轮均值百分比 —— 三轮均精确顶到预算,控制器在边界运行",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/r3f1b_a4cum.json:snapshot.certified_write.cumloss.charged_max"
+  },
+  {
+   "group": "R3五臂",
+   "name": "影子对账相对误差",
+   "value": "6.6",
+   "scope": "packed vs FP8 逐条目 rel_mean 三轮均值百分比,n_checked 4600-4800/轮",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/r3f1c_a5shadow.json:snapshot.all_ranks.rel_mean"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_attn ρ90",
+   "value": "0.034",
+   "scope": "Qwen2.5-7B x_attn prefill 逐层中位;verdict=concentrated;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_attn 留出",
+   "value": "0.829",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_mlp ρ90",
+   "value": "0.0444",
+   "scope": "Qwen2.5-7B x_mlp prefill 逐层中位;verdict=gray;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_mlp 留出",
+   "value": "0.660",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_o ρ90",
+   "value": "0.0332",
+   "scope": "Qwen2.5-7B x_o prefill 逐层中位;verdict=concentrated;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "Qwen2.5-7B x_o 留出",
+   "value": "0.742",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out_siteB/rrd_w2a_qwen7b.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_attn ρ90",
+   "value": "0.0044",
+   "scope": "DeepSeek-V2-Lite x_attn prefill 逐层中位;verdict=concentrated;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_attn 留出",
+   "value": "0.946",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_mlp ρ90",
+   "value": "0.0444",
+   "scope": "DeepSeek-V2-Lite x_mlp prefill 逐层中位;verdict=concentrated;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_mlp 留出",
+   "value": "0.792",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_o ρ90",
+   "value": "0.0264",
+   "scope": "DeepSeek-V2-Lite x_o prefill 逐层中位;verdict=concentrated;预注册 ρ90≤0.15∧留出≥0.70=concentrated",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2a谱",
+   "name": "DeepSeek-V2-Lite x_o 留出",
+   "value": "0.844",
+   "scope": "偶Σ top-7.1%d 子空间在奇Σ能量占比中位;平谱基线 0.071",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_w2a_dsv2lite.json:verdicts"
+  },
+  {
+   "group": "W2c门臂",
+   "name": "margin 中位(层中位)",
+   "value": "0.023",
+   "scope": "V2-Lite 64 专家 top-6,gate 线性 logit 域,prefill 逐层margin_median 再取层中位(推导)",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/rrd_w2c_router_margin.json:per_layer(derived)"
+  },
+  {
+   "group": "W2c门臂",
+   "name": "INT4 门量化 ε∞ 中位(层中位)",
+   "value": "0.177",
+   "scope": "gate 权重 g32 RTN;同上推导口径",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/rrd_w2c_router_margin.json:per_layer(derived)"
+  },
+  {
+   "group": "W2c门臂",
+   "name": "INT4 门量化翻转率",
+   "value": "63.2",
+   "scope": "top-6 集合变化占比(%);binding=99.5%;verdict=dead_too_small —— 'router 永不量化'的自家实证",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/rrd_w2c_router_margin.json:per_bits_class.int4"
+  },
+  {
+   "group": "W2c门臂",
+   "name": "INT4 门量化 binding",
+   "value": "99.5",
+   "scope": "m≤2ε∞ 占比(%),证书须拒绝的流量",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/rrd_w2c_router_margin.json:per_bits_class.int4"
+  },
+  {
+   "group": "W2c上游臂",
+   "name": "armA INT4 binding",
+   "value": "93.7",
+   "scope": "gate 保 bf16、仅量化 expert 投影(AMD 生产口径)g32 INT4;m≤2‖Δz‖∞ 占比(%);verdict=margins_hopeless",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cp_upstream_router.json:results.armA_int4"
+  },
+  {
+   "group": "W2c上游臂",
+   "name": "armA INT4 翻转率",
+   "value": "58.3",
+   "scope": "同上口径,top-6 实际变化占比(%);teacher-forced matched 三过",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cp_upstream_router.json:results.armA_int4"
+  },
+  {
+   "group": "W2c判别臂",
+   "name": "armA INT4 ΔNLL p95",
+   "value": "0.0011",
+   "scope": "teacher-forced 配对差(nats/token),n=33,620;中位 -0.0000;verdict=flips_benign —— 同臂同流 58.3% 翻转 × 质量不动 ⇒ 逐 token 路由不变性为非承载不变量(三臂链闭合)",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cq_flip_vs_quality.json:summary"
+  },
+  {
+   "group": "W2c自然臂",
+   "name": "自然文本 ΔNLL 中位/p95",
+   "value": "0.0002 / 0.518",
+   "scope": "Gutenberg12+code4×4k token,armA INT4-expert;中位无害而 p95 重伤=损伤尾部化;重复文本口径 p95=0.0011 的假阴性坐实(470x)",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cr_natural_discriminator.json:summary"
+  },
+  {
+   "group": "W2c自然臂",
+   "name": "ARC-Easy 配对 Δacc",
+   "value": "+0.8",
+   "scope": "pp;500 题 0-shot choice-logprob,base 52.4%,CI95 (-0.6,2.2);任务级无害",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cr_natural_discriminator.json:summary.task"
+  },
+  {
+   "group": "W2c自然臂",
+   "name": "自然文本翻转率",
+   "value": "35.3",
+   "scope": "%,any-MoE-layer top-6 变;重复文本口径 58.3%",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cr_natural_discriminator.json:summary"
+  },
+  {
+   "group": "W2c重合臂",
+   "name": "翻转-尾部富集比 OR(**分深度组**;聚合 OR 退化不可引用)",
+   "value": "0.84 / 0.71 / 0.75",
+   "scope": "tail=ΔNLL 前 5%;verdict=flip_uninformative —— 支柱 B 终葬。**聚合 OR 必须按退化处理**(与 Qwen1.5-MoE 同一标准):any-layer 翻转率 0.9996 于 65,520 token 上只剩 29 个未翻转 token、**2 个尾部事件**,单 token 扰动就能把 OR 从 0.46 推到 1.47 —— 该聚合值区分不了'无关'与'3× 富集'(预注册复活线 OR≥3)。分深度组的未翻转样本为 12,590 / 2,791 / 1,180,三组 OR 全部 <1,结论不变而仪器可用。逐组 P(tail|flip) vs P(tail|¬flip):shallow 0.048 vs 0.057; mid 0.049 vs 0.070; deep 0.050 vs 0.066。产物内 auroc 字段因并列秩无效,勿引用",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cs_flip_tail_overlap.json:summary"
+  },
+  {
+   "group": "W2c跨模型",
+   "name": "Qwen1.5-MoE ΔNLL 中位/p95",
+   "value": "0.0002 / 0.481",
+   "scope": "同口径复证(60 专家 top-4,仅 routed experts INT4):与 V2-Lite(0.0002/0.518)逐项重合;Δacc -0.4pp CI(-2.2,1.6),翻转 39.1%",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cr_qwenmoe.json:summary"
+  },
+  {
+   "group": "W2c跨模型",
+   "name": "Qwen1.5-MoE **分深度风险比 RR**(浅/中/深;三组齐报)",
+   "value": "0.65 / 0.74 / 0.69",
+   "scope": "any-layer 翻转在细粒度 MoE 上饱和(99.99%)致聚合 OR 退化(除零伪影,勿引);分深度组翻转率 ~95% 非退化,OR<1 与 V2-Lite 的分深度 0.84/0.71/0.75 同向 —— flip_uninformative 跨模型成立。**两个模型用同一标准**:聚合按退化处理、三组齐报。两条口径更正:①产物字段名 `or` 实为**风险比** RR(脚本 orate 返回 p_tail_flip/p_tail_noflip),不是 odds ratio,引用时不可混称;②该产物顶层 `verdict` 字段字面是 `flip_predicts_tail`,那是聚合退化(未翻转样本≈0)的**除零伪影**,不是结论 —— 结论以分深度组为准",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cs_qwenmoe.json:summary.per_depth_group"
+  },
+  {
+   "group": "W3AV",
+   "name": "serving e-process 峰值/因子数",
+   "value": "-3.70 / 706,909",
+   "scope": "DSV4 tp4 dither+ledger,8 请求×decode1024;sup log M 远低于 ln(1/0.01)=4.61,未越线 —— **仅证『半径模型未被否证』**(model-validation),不证 admission 风险(P0 纠偏 11244:AV 财富与逐动作越界是不同保证对象,禁作覆盖率主张)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av_wc_w3av.json.rank0:eprocess_global"
+  },
+  {
+   "group": "W3CC容量",
+   "name": "KV 容量 W4AFP8 vs FP8",
+   "value": "1,087,808 vs 291,968",
+   "scope": "GLM-5.2 双臂匹配口径(tp8/ep8/dp8,kv fp8,mem_fraction 0.85,ctx 65536);比值 3.73x —— 权重省下的 HBM 全部转为 KV 容量;裁决 w3cc_verdict VALID(逐档活性/档位一致)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cc_w4afp8.json:server_info"
+  },
+  {
+   "group": "W3CC容量",
+   "name": "C=128 聚合吞吐 W4AFP8 vs FP8",
+   "value": "1,834 vs 1,789",
+   "scope": "tok/s(SSE 块口径,两臂同法);同并发全谱平局(1..128 零错误),收益不在同并发速度而在容量 —— 与 Cloudflare 生产结论同构",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cc_w4afp8.json:levels"
+  },
+  {
+   "group": "W3CC容量",
+   "name": "扩展档 C=512 吞吐 W4AFP8 vs FP8",
+   "value": "1,869 vs 1,827",
+   "scope": "tok/s;192-512 档两臂零错误且吞吐平台(~1.9k)重合,TTFT 同步排队增长 —— 本负载(1k prompt/512 gen)在 C≈150 计算饱和,**两臂均未触 KV 墙**:容量优势只在长上下文/大驻留负载兑现,禁写成 divergence;吞吐单轮无 CI,平局表述须带限定",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/w3cc_w4afp8_ext.json:levels"
+  },
+  {
+   "group": "W3AV2双记账",
+   "name": "union 耗尽率 / 回退上界中位 / cumloss 违约",
+   "value": "100% / 31.0% / 0",
+   "scope": "36 个真实请求账户(DSV4 serving 因子流,decode1024×8 请求×4 rank):望远镜 union 预算每请求打满并强制回退(上界口径,未分耗尽/半径两因);cumloss_admission(定理机检)同流零违约且 Σz 全负 —— 归一化接口,描述性对照,armed 轮待做",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av2_cum_admission.json:summary"
+  },
+  {
+   "group": "W3AV4armed",
+   "name": "armed admit 调用数 cumopen/cumtight/union",
+   "value": "1,336,588 / 641,284 / 0",
+   "scope": "DSV4 tp4 dither+armed cumloss(冻结码 46145a7,三臂 V0 自证);union 0=处理独有正向信号(armed 真生效);逐条目 fail-closed 审计不变",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av3_verdict.json:criteria.V2_开关双向"
+  },
+  {
+   "group": "W3AV4armed",
+   "name": "剂量-反应 精确回退率中位 tight/open/union",
+   "value": "0.842 / 0.339 / 0.315",
+   "scope": "B̃=5e3/2e4 vs union;预算越紧回退越多(770,664 次整批回退)——控制器按预算真调节;**V5 覆盖收益(open<union)未实现**:cumopen量级门放松(δ_i=0.01 固定)被 B̃=2e4 中后段整批回退盖过,净收益需更大 B̃(cumwide 探测中);诚实负结果未改门",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av3_verdict.json:criteria.V4_紧预算会关"
+  },
+  {
+   "group": "W3AV4armed",
+   "name": "armed 判定开销 union→cumopen",
+   "value": "344.5 → 357.1",
+   "scope": "wall s/请求中位;+3.7% ≤ 10% 门 —— cumloss admission 判定(可预测账面查表)不显著拖慢;anytime 轨迹零违约(V3 cum_gap_max 全≤0)",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/w3av3_verdict.json:criteria.V6_开销≤10%"
+  },
+  {
+   "group": "W3AV4b物理账",
+   "name": "物理见证账 非空洞度/余量/违约",
+   "value": "0.67% / 4.6% / 0",
+   "scope": "16 端点(2 策略×8 客户端请求,rank0 去 TP 镜像+排boot/u1 暖机;cumloss 以物理 L=W、ψ=λ²C/8、exploratory λ=4e-3 实例化):**端点**零越界、tail/cum_m 中位 0.67%(非空洞)、余量 4.6%、16/16 cum_W<cum_m —— 承重梁①a:见证质量单位端点预算非空洞。**边界**:①端点非 anytime(物理轨迹待 extract 记);②λ exploratory (方向预注册值未先冻,待 held-out 复证);③cum_W=局部认证见证非 served TV/NLL,桥仍开放",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av4b_physical_ledger.json:summary"
+  },
+  {
+   "group": "W3AV5覆盖",
+   "name": "cumloss 覆盖收益转正 union vs cumwide 回退率",
+   "value": "31.49% vs 0.79%",
+   "scope": "归一化 z 账 armed(冻结码 fce92be);B̃=5e4 使 cumloss 门几乎不触发,只享固定 δ_i=0.01 量级门放松 vs union 望远镜 δ_i 二次衰减 —— 精确回退率中位 31.49%→0.79%(**降 39.9×**),V5(B̃=2e4)FAIL 后覆盖收益转正定位。**边界**:①z 门控非物理①b;②cumwide exploratory(非预注册,held-out 复证待);③回退低=授权多非质量",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av5_coverage.json:summary"
+  },
+  {
+   "group": "W3AV6物理门控",
+   "name": "①b 物理门控 armed 剂量反应 tight/wide/union",
+   "value": "0.48 / 0.22 / 0.31",
+   "scope": "**cum_W 真参与 admission**(WITCERT_CUMLOSS_MODE=phys,冻结码 4e35993,九条 PHYS_GATE_VALID):精确回退率中位 —— V4 剂量反应(tight 0.48>wide 0.22,门控真会关)、V5 覆盖收益(wide 0.22<union 0.31);exploratory λ=4e-3/B_phys(8e5/5.5e5,held-out 复证待)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av6_verdict.json:criteria"
+  },
+  {
+   "group": "W3AV6物理门控",
+   "name": "①b 物理 anytime + 控制面对账",
+   "value": "0 / 0",
+   "scope": "V3 物理 anytime 零违约(cum_W_gap_max≤0 全账户,cumloss_admission 以 L=W 实例化实测)/ V3d 控制面对账 realized>prospective 账户=0(**gating_conservative/admit_implies_realized_within 的运行时实证闭环** —— Lean 定理'用全批代替 passed sound'真机验证);开销 +3.8%",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av6_verdict.json:criteria"
+  },
+  {
+   "group": "W3SB逐读served律",
+   "name": "①c 逐读 served-TV tanh 紧化:a_q / 采样见证 / e-form空洞 / tanh(ε) / tanh(ε/2)",
+   "value": "1.0034 / 0.70 / 1.54 / 0.61 / 0.34",
+   "scope": "tv_le_tanh/softmax_tv_bridge_tanh/served_tv_le_of_gate_tanh(机检):门控保证 W≤wthr,逐读 TV≤tanh(a_q·wthr)。p76 自洽(a_q=1.0034,采样见证峰 0.70)worst-key:e-form=1.54 空洞 → tanh(ε)=0.61 机检非空洞 → tanh(ε/2)=0.34 紧;5% SLA 须 wthr*≤0.05。caliber:不混 V4-Flash armed(异模型,待测 a_q);worst-key+查询包络;累计仍开放",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sb_served_readbound.json"
+  },
+  {
+   "group": "R1查询包络阶梯",
+   "name": "**差距不在 a_q**:sound(权重派生)a_q / 实测 a_q / sound 比实测松几倍",
+   "value": "1.5067 / 1.0034 / 1.50",
+   "scope": "sound 版 a_q = softmax_scale·‖q‖_static,其中 ‖q‖_static =‖γ‖∞·√rank·max_head σmax(wq_b) 对**所有输入**成立、softmax_scale = head_dim^-0.5(SGLang 的 DSV4 实现无 YaRN mscale 修正,已核源码)⟹ **权重派生、不需要任何一次运行**,因此天生与 armed 同模型。这直接推翻论文此前的开放项写法('pending an a_q measured on the armed model'):那个开放项**定位错了**。实测版仅用于说明 sound 有多紧,来自另一 campaign,不参与合成",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sq_aq_ladder.json:rungs"
+  },
+  {
+   "group": "R1查询包络阶梯",
+   "name": "**球→椭球在 KV 侧买不到东西**:增益中位 / 层间范围 / 留出违约 / Δk 协方差稳定秩中位",
+   "value": "0.89 / 0.39–1.13 / 0 / 37",
+   "scope": "a_q 由柯西–施瓦茨 |q·Δk| ≤ ‖q‖‖Δk‖ 产生,取等号当且仅当 Δk 与 q 同向 —— 即在半径 W 的**球**上取最坏点。换成实测椭球给 |q·δ| ≤ r‖C^½q‖。V4-Flash 的 armed 捕获、43 层、留出协议(C 与 r 只用前半行拟合),增益中位**小于 1** —— **椭球比球还差**,而留出半零违约说明这不是过拟合造成的假低。稳定秩 37/448 证伪了'各向同性'的解释:能量确实集中,但 r 是 448 维里的**极值统计**(实测 25–31,超过各向同性基准 √448=21.2),它必须罩住低方差方向上最离群的那一行,把各向异性省下的又吐回去。对照:同一手法在**路由侧**买回 3.9–18.5×,那里换的是逐专家 ℓ∞ 球、结构不同 —— **不能外推**。**结论**:三层账 ①1.50× ②本轮实测无空间 ③约 700× 已测全,'剩下的全是工作点问题'从推测变成实测",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sq_aq_ellipsoid.json:per_layer"
+  },
+  {
+   "group": "R1查询包络阶梯",
+   "name": "**门控差距**:认证 5% 逐读 served TV 所需 w_thr(sound)/ armed 实际 / 倍数",
+   "value": "0.0332 / 35.34 / 1064",
+   "scope": "w_thr* = atanh(τ*)/a_q(机检 gate_threshold_for_sla)。armed 门限 35.34 取自**发射脚本一手来源** w3av6_phys_h200.sh:31 WITCERT_LEDGER_WTHR;它门在 u_e =mean_bound+tail+det_bound 上,而 u_e 是带范数和 ≥‖Δk‖(三角不等式)⟹ 与 a_q 同单位,复合合法(这曾是本结论唯一的暗前提)。armed 处的界 tanh(a_q·w_thr) = 1.0000 空洞。**要害**:三个数量级的差距里,查询包络的松只占 1.50× —— 收紧 a_q 救不了它;把门收紧三个数量级等价于把放行率压到接近零,即支柱 A 在**逐读 SLA 口径**下面临与支柱 B 同型的可用性问题",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sq_aq_ladder.json:sla_gaps"
+  },
+  {
+   "group": "W3SB逐读served律",
+   "name": "①c 门控设计律:5% 逐读 served SLA 门槛(proven)",
+   "value": "0.05",
+   "scope": "wthr*=atanh(τ*)/a_q(tanh 版反解):5% 逐读 served TV 须门槛 ≤0.05(proven,tanh(ε));tight(tanh(ε/2))版 ≤0.10。门控认证版,需同模型 a_q",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sb_served_readbound.json"
+  },
+  {
+   "group": "W3AV7held-out确认",
+   "name": "①b 物理门控 held-out 同轮覆盖收益 widehO/union",
+   "value": "0.14 / 0.30",
+   "scope": "**held-out confirmatory**(冻结 λ=4e-3/B_phys=8e5,主题与标定不相交):物理 anytime/控制面对账/剂量反应三性质复现;V5 覆盖收益升**同轮**(widehO 0.14 < 同轮 union 0.30,非跨轮推断)—— ①b exploratory→confirmatory,Gap2(跨轮)闭合;7 门 CONFIRMATORY_VALID",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3av7_verdict.json:summary"
+  },
+  {
+   "group": "W3SL逐读实测",
+   "name": "①c 逐读 served-TV 真实量级(V4-Flash 部署 m=2):中位/max",
+   "value": "0.03 / 0.29",
+   "scope": "K0 基建离线重建 exact vs 压缩注意力(V4-Flash 捕获字节+真实 q):部署档逐读 served TV 中位 0.03、max 0.29 —— **真实非空洞**;读时逐键紧形式实测",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sl_readtv_offline.json:per_m"
+  },
+  {
+   "group": "W3SL逐读实测",
+   "name": "①c tanh 界真实数据验证:tanh 违反数 / e-form 部署空洞率",
+   "value": "0 / 0.07",
+   "scope": "机检 tv_le_tanh 在真实数据上违反=0(含紧 tanh(ε/2));e-form 部署档空洞率 0.07(m=4 达 0.93),tanh 空洞率恒 0 —— tanh 化解 e-form 空洞",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sl_readtv_offline.json:per_m"
+  },
+  {
+   "group": "W3SLE累计served实测",
+   "name": "①c 累计 served next-token TV 端到端直测(armed V4-Flash,8 请求末位):中位/max",
+   "value": "0.12 / 0.22",
+   "scope": "两臂同定长 prompt(exact vs cwrite 压缩)捕获 LM head 前隐状态,离线Δh→head.weight→Δlogit→softmax;末位=整请求累计 served TV。中位 0.12、max 0.22 —— **端到端实测非空洞**(cumulative_output_tv 还原的实测;9 门 EOUT_MEASURED_NONVACUOUS)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sle_eout_verdict.json:summary"
+  },
+  {
+   "group": "W3SLE累计served实测",
+   "name": "①c 累计 sound 界:tanh(E_out)空洞 vs Hellinger 非空洞;E_out 末位中位",
+   "value": "0.996 / 0.16 / 0.28 / 3.1",
+   "scope": "tanh(‖Δlogit‖∞)=0.996 空洞(E_out 末位中位 3.1,最坏坐标落低概率 token)→ **Hellinger √(1−BC²) 中位 0.16、max 0.28 非空洞**(机检 tv_le_hellinger,违反 0;质量重叠破 L∞ 墙)。给定扰动 sound 界(逼近实测 0.12);a-priori(仅见证)走鞅+cum_C 待续",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sle_eout_verdict.json:summary"
+  },
+  {
+   "group": "W3SLE累计served实测",
+   "name": "①c variance 路线判决:实测 served 扰动 sub-Gaussian proxy σ²_implied 与词表方差 Var_p(δ) 之比 + sub-Gaussian kernel sound 界(末位中位)",
+   "value": "0.99 / 0.23 / 0.115",
+   "scope": "**σ²_implied/Var_p 逐请求中位 0.99(n=8,范围 0.78-1.47)≈1 ⟹ 实测扰动 variance-tight(sub-Gaussian,非 range 主导)**:尽管 E_out 达 3.2-18.9,σ²=2·ln E_p[e^{δ̃}]≈Var_p≈0.115(小,大扰动砸低概率 token)。**range 墙对 served 分布不 bind**。served_tv_le_subgaussian(机检)对实测 δ 给 sound 非空洞界 √(σ²/2)=0.23(V8 违反 0、V9 非空洞;比 Hellinger 0.16 松 √2,soundness 相对纯方差信息的固有代价)。a-priori 目标由此从'破 range 墙'降为'方差传播 Var_p(δ)≤tr(Cov_p head)·‖Δh‖²≤propagation·cum_C'",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sle_eout_verdict.json:summary"
+  },
+  {
+   "group": "W3GAM传播常数",
+   "name": "item2 传播系数 γ_ℓ 真机测:逐层 ρ=‖Δh_服务位‖²/‖δ‖² 的层中位/min/max,与线性性比(应≈1)",
+   "value": "4.07e-03 / 7.2e-05 / 4.9e-02 / 14.1",
+   "scope": "43 层×2 种子×2 eps 全覆盖,195 有效点,**噪声地板=0(逐字节确定)**;Hutchinson ⟹ ‖J‖²_F 中位≈5.6e3(dim δ=1.37e6)。**但 verdict=nonlinear_regime**:线性比中位 14.1≈16=(eps 比 4)² ⟹ ‖Δh‖² 与注入能量近乎无关(**饱和**),即一阶线性化 X_ℓ=J^ℓδa^ℓ 在该 MoE 的此扰动量程上**经验性失效**(极可能 MoE 路由 argmax 离散翻转)。故 γ_ℓ 数值**不可直接用作 sound 传播常数**;需 Doob 分解路线",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3gam_gamma_verdict.json:summary"
+  },
+  {
+   "group": "W3BD有界差分预算",
+   "name": "根定理消费的质量加权步预算:**直接经验 MGF** / Hoeffding 路 / top-8192 可部署形式",
+   "value": "0.0390 / 0.0489 / 0.276",
+   "scope": "43 层×9 种子,逐词表 c_{ℓ,v}=max_seeds|δ_v|、b_v=∑_ℓ E_seeds[δ_v],**δ 已按定理假设 (i) 做 gauge 中心化**(softmax 平移不变);s_v²=∑c²/4,B_v=exp(b_v+s_v²/2),budget=√(log ∑_v p_v B_v)。**直接估 E_ω[e^{δ_v}] 给 0.0390**,比经 Hoeffding(取 sup)的 0.0489 更紧 —— 根定理要的**既不是典型值也不是上确界,是期望**,直接估它即绕开了'典型值 vs sup 差 251×'那个陷阱。两者都**极度非空洞**,且**不经一阶线性化**(有界差分可直接测,不受 W3GAM 饱和证伪影响)。可部署 top-k 需 **K 在千量级**:top-8192=0.276(16× 降本),top-1024=0.967,top-64=1.288(空洞)——因扰动质量散在长尾,尾包络必须取在**乘积 p_v·B_v** 上(massweighted_prodenv_bound),取 max B_v 会被 5.6e8 主导。**统计义务定价**:经验 Bernstein(Maurer-Pontil,α=0.01)把预算从 0.0390 推成 **7.64(空洞)**,slack/mean 2.74(n=9);加样本救不了 —— n=12 时估计本身已收敛(0.0390→0.0404)而界只从 7.64 到 7.18、slack 2.74→2.02。**失效的是界不是估计**:其 range 项 ∝ e^c·ln(1/α)/n,所需样本随有界差分**指数增长**。正解是 betting 型置信序列(方差自适应、anytime-valid,恰是本文已有机制)。估计风险 α 须加到账本 δ 上,部署证书报 δ+α。口径:经验 max 是 sup 的**下界** ⟹ 非空洞但**非 sound**;b_v 是 9 样本估计不是界;扰动是改动该层抽签的代理",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3gam8_bdddiff_verdict.json:by_eps"
+  },
+  {
+   "group": "W3LIP逐层Lipschitz",
+   "name": "sound 包络的数值实例化:整栈 ∏_ℓ(1+L_ℓ) 的 log10 / 逐层 (1+L) 中位 / 最大谱范数",
+   "value": "221 / 1.39e+05 / 387",
+   "scope": "43/43 层权重幂迭代谱范数(V4-Flash FP8 dequant)。**verdict=LIP_ENVELOPE_VACUOUS(预注册为很可能失败)**:sound 的 Lipschitz 复合律已机检(lip_residual/lip_iterComp/bdd_diff_of_lipschitz),但由权重实例化得 **10^221**,完全空洞 ⟹ 结构性包络这条路给不出可用的 c_ℓ。而且该估计在**多处偏乐观**(幂迭代给下界、RMSNorm 未计入、专家采样取 max),真值只会更大。**这正是经验有界差分路线(0.0489)不可替代的原因**,也把开放问题量化为'包络需降约 220 个数量级,或改用数据依赖/局部 Lipschitz 而非全局'",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3lip_layer_lipschitz.json:summary"
+  },
+  {
+   "group": "W3LOC局部Lipschitz",
+   "name": "局部(层 ℓ→服务位)映射:随机方向典型比 √ρ / **算子范数估计 σ_max** / 有效秩 r_eff(三者中位)",
+   "value": "0.0638 / 16.0 / 42",
+   "scope": "**纠正**:随机探针估的是 ‖J‖²_F/dim,**不是**算子范数;二者只在增益散布于多方向时重合,而实测有效秩仅 42(dim=1.37e6)⟹ σ_max 中位 16、max 62.5,**expansive 而非收缩**,是典型比的 251×。(此前据典型比称'每层收缩'系口径错误,已撤。)意义:局部化仍值大钱 —— 同口径全局包络中位 10^109,局部算子范数 16,**改善逾百个数量级**;但 16>1 ⟹ 以 sup 喂 Hoeffding 仍空洞。根定理要的是 E_ω[e^δ]≤B_v(**期望**,抽签是随机非对抗),用最坏 sup 去界它恰恰丢掉了实测揭示的结构(放大子空间仅 42 维、舍入误差不瞄准它)⟹ 正解是按有效秩标定的 **Bernstein 型方差界**,不是按 sup 标定的 Hoeffding。251× 是用错不等式的代价,不是网络的性质",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3gam8_gamma_verdict.json:rank_info"
+  },
+  {
+   "group": "W3JOINT联合标量矩",
+   "name": "根定理消费的量**正确测法**:联合抽签 —— **betting CS 上界 E[TV]** / 标量矩点估 / 抽签数",
+   "value": "0.0322 / 0.0023 / 279",
+   "scope": "固定历史,**全部 43 层联合重采样**(WITCERT_GAMMA_JOINT=1),整前向,每 seed 归约为一个标量;E[TV]≤√(log E[Z])。**这修正了此前 ∏_ℓ Ê[e^{δ_ℓ,v}] 的错误** —— 逐层矩相乘需 ω-local 可加,而饱和实测已证伪之(那两个数 0.0390/0.0489 已降格为模型依赖诊断)。Z 极度集中(mean 1.000005,max 1.000024),噪声地板 0,279 次抽签。**betting 型置信序列(WSR)直接界 E[TV]:上界 0.0322,α=0.01,anytime-valid** —— TV∈[0,1] 是**确定性**边界,故该路线**不需要任何样本极值**,Bernstein 那个 'R 取样本 max' 的 non-sound 缺口在此消失。**关键对比:同一 Bernstein 不等式,逐层×逐词元路线给 7.64(空洞),联合标量路线给 0.2086(非空洞)** —— 差别来自无词表 union、标量集中、α 只付一次。口径:R 取样本极值而非确定性上界 ⟹ 该上界**诊断非 sound**;真 sound 需 Z 的确定性上界或 betting 型置信序列;扰动仍是 SR 重采样的代理;α 须与账本 δ 相加,部署证书报 δ+α",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3joint_joint_scalar_verdict.json:summary"
+  },
+  {
+   "group": "W3SR真实SR抽签",
+   "name": "**去掉代理**:扰动即部署的随机舍入本身 —— E[TV] 的 betting CS 上界 / TV 均值 / 抽签数",
+   "value": "0.0552 / 1.64e-05 / 160",
+   "scope": "SR 种子含 current_uid(逐请求不同)⟹ 对**同一** prompt 重复发 N 次,每次即一次**真实部署抽签**;exact 臂给参照 p,comp 臂给 p'_j;radix 关。预注册四判据全过:**S0 压缩真发生(1,999,586 条目)**、**S1 抽签真在变(160/160 个 TV 互不相同 —— 若全同则说明 uid 未变、跑的是同一次抽签,预注册为判红而非'结果稳定')**、S3 非空洞、**S4 两臂对账**(exact/comp 各 160 捕获、位数同为 334、gap 0 —— 该判据是因一次在 flush 未完成时跑裁决、comp 只读到 56 而脚本照常出数才补上的 fail-closed)。**E_ω[TV] ≤ 0.0552(α=0.01,anytime-valid,不用任何样本极值)**,TV 均值 1.64e-5,160 次抽签。这是**部署量**,不再是高斯注入代理。样本量假说由此得到**对照**而非推断:同一实验 56 抽签给 0.1463、160 抽签给 0.0552,量本身未变(TV 均值 1.4e-5→1.6e-5)。口径(引用必带):**这是在一个固定历史上的界**(一个 prompt、一个 prefill 末位),而根定理的假设量化在**每个历史**上 ⟹ 此处 anytime-valid 指随抽签数增加仍有效,**不是**沿自回归请求的所有历史有效;另假设各请求抽签独立;风险须记 δ_ledger+α_draw+**α_history**,本文只付前两项",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3sr_realsr_verdict.json:summary"
+  },
+  {
+   "group": "W3MH多历史heldout",
+   "name": "跨历史条件界(**认证口径,三态**):留出**认证通过**数 / p_history(认证失败率 CP 上界) / **跨历史 TV 均值 max/min 倍差**(80 历史,可交换抽样)",
+   "value": "16/16 / 0.2501 / 133,849",
+   "scope": "12 历史(各用互不相同 token 数)× 每历史 40 次真实部署 SR 抽签 × 两臂;压缩 5,830,313 条目;**exact 臂逐历史自差恒为 0**(M5,查全部捕获)。**verdict=MULTIHIST_HELDOUT_HOLDS**。判读是**三态**的,只有外侧两态是结论:UCB_h ≤ μ_cal 判**认证通过**、LCB_h > μ_cal 判**认证违约**、其余**未获认证**。本次 **16 通过 / 0 未获认证 / 0 违约**(两次纠正各记一笔:①拿样本均值冒充界;②把'未获认证'读成'违约',后者是前者高一层的同族错误)。α_draw 按 Bonferroni 逐历史分配 1.25e-04(每个历史各建一个 UCB,不能只付一次)。**最重要的实证事实:跨历史 TV 均值 2.0e-06→2.6e-01,差 133,849 倍**,此前单历史实验恰落在最不敏感一端。口径:①**CP 界的是认证失败率**(未通过认证的历史比例 ≤ 0.8269),**不是真实违约率**(零违约事件的对应上界是 0.5358);②CP 要求历史是目标族的 i.i.d./可交换抽样,而本族是**人为选取**(递增长度、确定性交错分割)⟹ p_history 只能算**样本量诊断**,不是'下一未见历史'的正式风险账;完整账还需 β_history(估计历史失败率本身的置信失败概率)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cf_multihist_verdict.json:summary"
+  },
+  {
+   "group": "W3CF共形历史外推",
+   "name": "**共形(顺序统计量)口径**:μ_conf / P(下一未见历史真值 > μ_conf) / 相对留出 CP 的紧化倍数",
+   "value": "0.4095 / 0.0254 / 9.9×",
+   "scope": "**同一批数据,只换仪器**。留出 CP 把留出历史压成二值指示器再计数,顺序结构被扔掉;顺序统计量直接给 P(新历史分数 > 全部 N 个校准分数) ≤ 1/(N+1)(Conformal.lean 的 conformal_exceedance_le,不交性是**推出**的,可交换性是显式假设),并上新历史自己那一个上界的未覆盖预算 α ⟹ conformal_risk_union。**两个维度同时改善**:阈值 0.5116→0.4095(校准分数**不必覆盖真值**,只作符合性分数 ⟹ 逐历史 Bonferroni 在这条路线上不存在,α 从 1.25e-04 回到 0.01),失败概率 0.2501→0.0254(**边际**保证)。**两种保证强度必须分开**(评审 2026-08-08):边际界对校准集与新历史联合平均;训练条件(PAC)界对**已抽到的这个**校准集以 1-δ 置信成立 = 0.0933。**该界必须按有限池无放回算(负超几何 P(J≥j)=C(M-j,N)/C(M,N)),不能用 Beta(1,N)** —— 后者假设 i.i.d. 无限连续总体,与本设计不符且错在不安全一侧(0.0794 vs 正确的 0.0933;自审 2026-08-08 抓出)。CP 是高置信陈述 ⟹ **同保证强度的倍率只有 2.7×**;拿边际界比 CP 得到的 9.9× 是跨保证强度,不可引用。这是本篇'仪器错配'诊断的**正面实例**:前四次是把最坏值域仪器用在非值域受限的量上,这次是把二值计数换成顺序统计量。**可交换前提由构造满足**:从 148 个按 token 数去重的候选历史中**无放回均匀抽样** ⟹ 该界在**该候选池上的均匀分布**这个总体上是**真界**,不再只是仪器效率上限。并有对它的**真检验**:16 个留出历史越界 0 个(期望 ≤ 0.25)—— **功效很低,是 sanity check 而非确认性检验**;阈值只由校准集决定,留出从未参与。候选池由少数基础文本的不同截断构成,语义多样性远低于同等数量的真实请求,且是前缀集而非自回归请求真正走过的历史流。口径(引用必带):总体是该候选池,**不是运行时流量** —— 要当运行时风险账仍须改为从真实流量可交换抽样。达**总** 1% 需 α=0.005 与 199 个历史(留出 CP 零事件达同一 1% 需 459 个)",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cf_multihist_verdict.json:summary"
+  },
+  {
+   "group": "W2CV跨家族路由margin",
+   "name": "**跨模型家族**的 INT4 binding(证书作为门会拒掉的流量占比;顺序 DeepSeek-V3.2 / DeepSeek-V4-Flash / GLM-5.2-FP8 / Kimi-K2.5 / Llama-4-Scout-17B-16E-Instruct / MiniMax-M2.7 / Mixtral-8x7B-Instruct-v0.1 / Qwen3-30B-A3B-Instruct-2507 / gpt-oss-120b)",
+   "value": "99.9% / 99.0% / 99.9% / 99.8% / 35.2% / 99.8% / 38.9% / 99.8% / 93.6%",
+   "scope": "同一量化口径(group-32 absmax RTN)、同一预注册判据,**三种不同的路由制度**:DeepSeek-V3.2(256 专家 top-8,**分组路由** n_group=8/选 4(两段选择,组阶段预算 4Lε),选择分数域 L=0.25) binding 99.9%、翻转 59.1%、soundness 违约 0; DeepSeek-V4-Flash(256 专家 top-6,选择分数域 L=0.319087) binding 99.0%、翻转 37.7%、soundness 违约 0; GLM-5.2-FP8(256 专家 top-8,选择分数域 L=0.25) binding 99.9%、翻转 47.6%、soundness 违约 0; Kimi-K2.5(384 专家 top-8,选择分数域 L=0.25) binding 99.8%、翻转 46.8%、soundness 违约 0; Llama-4-Scout-17B-16E-Instruct(16 专家 top-1,logit 域(无 bias)) binding 35.2%、翻转 6.2%、soundness 违约 0; MiniMax-M2.7(256 专家 top-8,选择分数域 L=0.25) binding 99.8%、翻转 46.8%、soundness 违约 0; Mixtral-8x7B-Instruct-v0.1(8 专家 top-2,logit 域(无 bias)) binding 38.9%、翻转 7.9%、soundness 违约 0; Qwen3-30B-A3B-Instruct-2507(128 专家 top-8,logit 域(无 bias)) binding 99.8%、翻转 56.7%、soundness 违约 0; gpt-oss-120b(128 专家 top-4,logit 域(无 bias)) binding 93.6%、翻转 24.5%、soundness 违约 0。**结论跨家族一致**:证书恒 sound(违约全 0),但作为门会拒掉几乎全部流量 ⟹ 支柱 B 的否定不是小模型伪影。口径:margin 域由**有无 per-expert bias** 决定而非由模型名决定 —— 无 bias 时选择完全由 logit 序定(单调不改序),有 bias 时必须在选择分数域并乘 scoring 的 Lipschitz 上界",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cv_v4_router_margin.json:per_bits.int4"
+  },
+  {
+   "group": "W2CV跨家族路由margin",
+   "name": "**k 规律**:log(1-binding) 对 k 的回归(截距 / 斜率 / R² / 每多选一个专家吃掉的余量%)",
+   "value": "0.95 / -0.943 / 0.962 / 61",
+   "scope": "9 个模型(k∈[1, 2, 4, 6, 8],专家数 [8, 16, 128, 256, 384])的 INT4 binding 各取一点,**无加权最小二乘**。口径:每模型一点(不按 token 加权),binding 取 per_bits.int4.binding。**专家数无独立效应**是这条规律的要害:k=8 档共 5 个模型、专家数横跨三档,binding 极差仅 0.0017。**这是拟合不是定律** —— 只在已测的 k 与量化口径内成立,外推到 k>8 或别的量化族没有依据",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cv_v4_router_margin.json:per_bits.int4"
+  },
+  {
+   "group": "W2CW保守性分解",
+   "name": "**k 规律的斜率有多少是仪器**:log(admit) 对 k 的斜率,现行判据 / 收紧后 / oracle",
+   "value": "-0.943 / -0.266 / -0.101",
+   "scope": "同一批 token、同一量化口径,只换判据的松紧:T0=现行(逐 token 全体专家取 max 的 ε∞ + 全局 Lipschitz)、T2=逐专家 ε + 局部 Lipschitz(仍是确定性最坏情形界)、T3=oracle(真实是否翻转)。**要害**:现行斜率里只有约 11% 是物理,其余是界的松紧随 k 恶化 —— 把 −0.94 读成'MoE 的性质'是把自家口径写成了模型属性。soundness 违约:三档全 0",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cw_kimi_ladder.json:per_bits.int4"
+  },
+  {
+   "group": "W2CW保守性分解",
+   "name": "**收紧倍数**(T2/T0)与**离 oracle 的剩余倍数**(oracle/T2),k=8 档极值",
+   "value": "314 / 6.6",
+   "scope": "5 个 k=8 模型。ε∞ 对全体专家取 max 是最大一块浪费(只有边界两个专家的误差进判据);sigmoid 的局部斜率再拿回一档(top 专家 logit 高、处于饱和区)。剩余倍数是**符号未知**的硬代价:确定性证书必须假设两个专家的扰动恰好反向",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cw_glm52_ladder.json:per_bits.int4"
+  },
+  {
+   "group": "W2CY可部署证书",
+   "name": "**可部署**证书的放行率(扰动方向未知):球 / 实测椭球 / 共形椭球α=0.05,k≤2 档",
+   "value": "0.00%,31.96%,38.36% / 0.00%,20.89%,32.52%",
+   "scope": "**口径分水岭**:已发表的 binding 用的是实测 ε∞ —— 拿到它等于已把量化路径算完,不可部署,它是**乐观端**。本条量的是方向未知时能做到多好。协议:协方差 C 与半径 r 只用逐层前半 token 拟合,放行率与违约只在后半评估;确定性档违约必须为 0(实测为 0),共形档 α=0.05 的实测违约也是 0(α 没花掉,卡住的是椭球维数)。k≥4 的 4 个模型全部为 0.00%(gpt-oss 共形档 0.01%) —— 每一种确定性与边际覆盖的收紧都试过了",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cy_llama4_ellipsoid.json:tiers"
+  },
+  {
+   "group": "W2CY可部署证书",
+   "name": "门 logit 误差 Δz 的**稳定秩**范围(专家数 8→384)",
+   "value": "4.5–13.9",
+   "scope": "稳定秩 = tr(C)/λ_max,C 为逐层 Δz 的留出协方差。**与专家数无关**:8 个专家与 384 个专家的稳定秩同量级 ⟹ 扰动真的活在约十维的集合里,椭球赌的低维性成立且已被吃干净;确定性证书仍要付 √(有效维数),这是它逼不到 oracle 的原因",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w2cy_kimi_ellipsoid.json:diag_layer_mean"
+  },
+  {
+   "group": "W2CX路由TV",
+   "name": "**证书通过者仍在漂移**:集合不变的 token 其路由分布 TV 中位(最小–最大,跨模型)/ 单模型最大值",
+   "value": "0.0098–0.0376 / 0.175",
+   "scope": "路由分布 TV = ½‖w′−w‖₁,w 为选中集合上重归一化的门控权重。支持集不相交 ⟹ 精确分解成'换人'与'漂移'两块;集合不变的 token 其 TV 全部来自漂移,而**现行证书对漂移不设任何界**。对照:发生翻转时搬动的质量中位 0.100–0.332(top-k 会重归一化 ⟹ 边际专家权重约 1/k 而非趋零,'翻转搬动质量极小'的猜测被**证伪**)。k=1 不入统计:单专家权重恒为 1,漂移在定义上为 0",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cx_kimi_routing_tv.json:tv_given_no_flip"
+  },
+  {
+   "group": "R2容量兑现链",
+   "name": "**同一 3.7 倍容量,两种工况的兑现结果**:无前缀复用的吞吐比 / 会话复用的吞吐比(区间)/ 会话复用的均值",
+   "value": "0.96–1.01 / 1.07–1.27 / 1.19",
+   "scope": "GLM-5.2 生产栈(tp8/ep8/dp8 + dsa 后端 + graphs on,两臂 mem_fraction 匹配 0.85),26k token/请求,W4AFP8 vs FP8,配置容量比 3.726×。**两个工况必须一起报**:无复用时每请求付全额 prefill(cached-token 峰值 fp8 2,560、w4afp8 0,对照 26,000 的 prompt)⟹ 算力先饱和,容量优势**无处兑现**;会话复用(每 worker 自有长上下文跨轮复用,编程 agent 形状)⟹ 前缀命中,容量决定**多少会话保持 cache-warm**⟹ 兑现。单报任一个都会误导。**口径**:会话轮的协议含分档前缀命名空间 + 每档 90s 预热 —— 无此二者会跨档携带 cache,曾测出伪值 1.58×",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cc_fp8_warm2.json:levels"
+  },
+  {
+   "group": "R2容量兑现链",
+   "name": "**兑现链逐环衰减**(会话复用工况):配置容量 / 并发 / 热命中 / 吞吐",
+   "value": "3.73 / 2.24 / 1.93 / 1.19",
+   "scope": "并发比取两臂 running-req 峰值众数(FP8 10–11 被 KV 封顶,占用 1.00;W4AFP8 23–24,占用 0.54);热命中比取全命中 prefill 次数(cached-token > 13,000)。**每一环都在衰减** —— 命中省下的是 prefill,而稳态吞吐仍由 decode 与算力决定。TTFT 在 C<=192 改善 1.08–1.20×,**C=256 反转到 0.92×**:算力饱和后 W4AFP8 的 24 并发使单请求分到更少,**容量买到的吞吐以单请求延迟为代价**。窗口内每会话仅约 1.9 轮(181 完成/96 会话),真实 agent 要跑几十轮 ⟹ 1.19 是**下界**,但不据此外推",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/w3cc_w4afp8_warm2.json:levels"
+  },
+  {
+   "group": "R6替换恒等式",
+   "name": "TV(W,W′)=1−(Σ_K u)/max(U,U′) 的实测残差(九模型最大)",
+   "value": "2.4e-07",
+   "scope": "**恒等式不是界**。右端对 S′ 的依赖只通过总量 U′ —— 换进来的是哪几个专家不出现在等式里。⟹ 按分数挑最好的常驻替补、随机挑、干脆丢掉,三者路由 TV **完全相同**(机检 tv_cannot_separate)。残差在数值精度量级,k=1 的 Llama-4 精确为 0。这是对**整个用路由 TV 表达的证书族**的不可能性结论",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rs_v4.json:armB_residency"
+  },
+  {
+   "group": "R6替换恒等式",
+   "name": "三个替换策略逐 token TV 相同的比例(九模型最小–最大)",
+   "value": "88%–100%",
+   "scope": "五个模型 100%(权重序与选择序一致);带 per-expert bias 的四个88%–99%,差异全部来自 U′>U 的情形,恒等式的一般形式仍成立",
+   "headline": false,
+   "paper": 4,
+   "source": "experiments/out/w3rs_glm52.json:armB_residency"
+  },
+  {
+   "group": "R6等字节头对头",
+   "name": "**等专家显存**下 ρ=1/4 常驻 bf16 相对 INT4 全量化的路由 TV 倍数(九模型,均值口径)",
+   "value": "3.0×–15.5×",
+   "scope": "臂A(全量化)E 个专家×b bit vs 臂B(常驻)ρE 个×bf16,ρ=b/16 时等字节。**量化臂 9/9 全胜**。但 TV 上的胜负**不可单独下结论**(先于数据写死):TV 低估臂A(看不见专家输出误差),同时可能高估臂B(恒等式说明它看不见替补是不是分数相邻,实测替补的全局排名中位只有 1–11)。两向都偏 ⟹ 判词 needs_dnll,由 R7 定谳",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rs_mixtral.json:armA_quantize_all"
+  },
+  {
+   "group": "R7常驻质量代价",
+   "name": "**DeepSeek-V2-Lite** 常驻 1/2、1/4、1/8 专家 + 按分数替换的 ΔNLL 中位 / ARC Δacc",
+   "value": "0.400 纳特 / -16.2pp;1.055 / -20.8pp;2.130 / -21.4pp",
+   "scope": "与 INT4 全量化**等字节**的是 ρ=1/4 那档,而后者在同模型同语料同协议下是 2.5e-4 纳特 / +0.8pp —— **差 4×10³ 倍**。base ARC 0.524 与 w2cr 已发表基线逐字相同 ⟹ 协议同源。常驻集由**不相交**语料标定;门控权重复算与模块自身逐层核对 ≤1e-4,不符即中止",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rq_residency_quality.json:summary"
+  },
+  {
+   "group": "R7常驻质量代价",
+   "name": "随机替换 / 按分数替换的 ΔNLL 中位比(预注册:≥3.0 判 TV 量错了)",
+   "value": "1.08",
+   "scope": "**预注册假设被判否**:按分数挑替补只比随机挑好 8%。⟹ 路由 TV 看不见替补身份,是因为替补身份**不重要** —— R6 的恒等式描述的是真实不变量而非仪器缺陷。这条同时把'TV 高估常驻臂'的警告证伪,等字节比较的推理链因此闭合。机制读法:免费的不是'随便改路由' —— 量化改的是模型**自己在扰动下的偏好**(自洽),常驻替换是**外部强制覆盖**(不自洽)",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rq_residency_quality.json:random_over_score_median_ratio"
+  },
+  {
+   "group": "R8比特地板",
+   "name": "**DeepSeek-V2-Lite** expert-only RTN 量化的 ΔNLL 中位 / ARC Δacc(INT4 / INT3 / INT2)",
+   "value": "0.00025 / +0.8pp;0.00680 / -2.6pp;1.812 / -16.6pp",
+   "scope": "对照臂**逐位精确**复现已发表值(abs_gap=0.0)。INT4 的 Δacc CI (-0.6,+2.2) 跨 0 ⟹ 与零不可区分;INT3 CI (-4.8,-0.6);INT2 CI (-21.6,-11.6)。**悬崖在 3 和 2 之间,不在 4** —— 生产的 MXFP4 是惯例不是实测悬崖。量化器是**纯 RTN**(无校准数据/无 Hessian/无搜索),方向不对称:RTN 下免费 ⟹ 结论更强;RTN 下不免费 **不可**推出该档不行。INT3 的 2.6 点正是校准型量化器通常能吃掉的量级",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rb_expert_bits.json:summary"
+  },
+  {
+   "group": "R9路由保持无收益",
+   "name": "专家权重固定(armA INT4)只换路由策略:强制回放 bf16 原路由 vs 量化模型自路由,配对 ΔNLL 中位差占量化总效应的比例 / 回放覆盖率",
+   "value": "2.6% 的量化总效应 / 回放覆盖率 27.6%",
+   "scope": "**两臂专家权重逐位相同**,唯一差别是门控输出。回放覆盖率27.6% ⟹ 干预非空(<1% 会判 VACUOUS,该自检是补加的:原脚本只校验调用次数与形状,不校验回放到底改了什么)。配对差 −6e-6 纳特,是量化总效应(2.5e-4)的 **2.4%** ⟹ **在量化下把路由恢复成原样买不到东西**。**定位(2026-08-10 文献核查后更正)**:该 2×2 已被做过两次 —— EAC-MoE(ACL 2025 Table 1,2–3 bit,含 4-bit attention)与 MoBiE(Table 1,1-bit,专家二值化),**两次都是 forced 赢**。故'领域信念未经检验'这个前提**不成立**,不得作为卖点。本轮的贡献是**部署档那个缺失的点**:1-bit ΔPPL 2.37–3.44、2–3 bit 0.36–0.44、**4-bit 0.050**,即优势随比特每档降约一个数量级,到实际出货精度只剩基线 PPL 的 0.7%。且本轮扰动更纯(只量化专家,gate 与 attention 都 bf16)、量化器更差(RTN 非 GPTQ,扰动更大,方向上偏向'找得到差距'),仍然只有 0.050。**判词须打折看**:它由准确率一支触发(self 0.532 vs forced 0.520,500 题里 6 题),而那一支是**裸门限无 CI**,与本文其他判据不一致;有 CI 的 ΔNLL 一支方向相反(forced 略好)。两臂实用上不可区分。规则不追改(看了数据再改规则是作弊),缺陷如实披露,acc CI 只加给将来的运行。与另外两台独立仪器同向:翻转率反预测损伤(RR 0.71–0.84)、三者合起来:**路由不是量化损伤流经的通道**(翻转层数计数的 AUROC 因并列秩未修复,不引用)。机制层面本文不下结论 —— 当日提出的两个机制解释都被随后的测量打掉(替补相邻性 比值 1.08;分数带内/带外 细粒度模型比值 0.12–0.59),故只报测量",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rf_forced_routing.json:diff_forced_minus_self_nll_median"
+  },
+  {
+   "group": "R10路由保持的收益曲线",
+   "name": "**同模型同量化器同协议**下,恢复原路由的收益 vs 实际路由改变率(4/3/2 bit)",
+   "value": "4 bit: 改变率 27.6% → 相对收益 +16.6%(绝对 +0.026 PPL) ; 3 bit: 改变率 52.5% → 相对收益 +11.7%(绝对 +0.132 PPL) ; 2 bit: 改变率 88.1% → 相对收益 -7.5%(绝对 -13.522 PPL)",
+   "scope": "**存在反号点**,预注册的单调性被判否。三档的配对增益 CI 全部排除零(4bit +0.00723 [+0.0037,+0.0109];3bit +0.02992 [+0.0182,+0.0438];2bit **−0.21098** [−0.3920,−0.0633]),即漂移足够大之后**未量化模型的路由对量化模型的表示不再是对的路由**,交叉点落在改变率 52.5% 与 88.1% 之间。**2026-08-10 更正(R12 撤回)**:我曾据 16.6%→11.7% 这一降读出'名义比特不是横轴、路由改变率才是',并据此调和 MoBiE 与本轮。R12 固定 4bit 只改 group、把比特与漂移解耦后:漂移从 24.4% 涨到 36.0%(1.5×),相对收益 15.6/16.6/14.8/17.4/18.9%,**无可检测变化**,且与 3bit 点(11.7%)的 CI 全部重叠 ⟹ 那个'降'本在噪声内,横轴论证**已撤**。存活的是更简单的版本:可用区间内相对收益近似恒定(约 15%),唯一显著的效应是 2bit 处的反号。路由改变率仍值得报(router-only,九模型七配置 22 秒),但只作描述统计,不再声称它是解释性的轴。本轮量化器 RTN 比 GPTQ 差 ⟹ 漂移更大 ⟹ 偏向'找得到收益',方向保守;只量化专家(gate/attention 都 bf16),比 EAC-MoE 干净(它同时量化 attention)。int4 self 臂复现已发表值,口径同源",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rc_routing_curve.json:curve"
+  },
+  {
+   "group": "R10路由保持的收益曲线",
+   "name": "部署档(W4)上恢复原路由的**绝对**收益,相对基线 PPL",
+   "value": "0.026 / 3.48 = 0.75%",
+   "scope": "预注册的 worth_it(相对 ≥25% **且** 绝对 ≥0.2 PPL)在 4/3/2 三档**全部不满足**。相对收益在可用档位是 16.6%/11.7%,不算小 —— 但它乘的是一个很小的损伤(W4 处 0.026 PPL),故绝对收益低于任何工程阈值。⟹ 路由一致性机制的回报**与你已经接受的损伤成正比**,因此在你真正想出货的精度上回报最小。这不与 EAC-MoE/MoBiE 冲突:他们的大收益(0.36–3.44 PPL)来自损伤本来就大的工作点",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rc_routing_curve.json:base_ppl"
+  },
+  {
+   "group": "R12漂移不是那根轴",
+   "name": "固定 4bit 只改 group(比特与漂移解耦)下,漂移 → 相对收益",
+   "value": "g16: 漂移 24.4% → +15.6% ; g32: 漂移 27.6% → +16.6% ; g64: 漂移 30.7% → +14.8% ; g128: 漂移 33.5% → +17.4% ; g256: 漂移 36.0% → +18.9%",
+   "scope": "判词 **inconclusive_no_drift_overlap**(4bit 漂移最高 36.0%,够不到 3bit 点 52.5% 的 ±8pp,预注册的诚实出口)。但数据本身给了答案:同一比特内漂移涨 1.5×,相对收益**无可检测变化**,六个点 CI 全部互相重叠 ⟹ R10 里 16.6%→11.7% 的'下降'本在噪声内,**我据此建的横轴论证已从论文与 canon 撤回**。跨轮对照逐位精确(b4g32 漂移 0.276、selfΔNLL 0.04358,与 R10 int4 相同)。这是当日第四个被自己下一次测量打掉的解释(前三:替补相邻性 1.08;分数带内/带外;漂移轴)",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rd_drift_axis.json:grid"
+  },
+  {
+   "group": "R13-15路由份额不变量",
+   "name": "回放份额 (self−forced)/self:RTN / GPTQ / armB(均 4bit g32 主档)",
+   "value": "16.6% (8.4,25.0) / 15.8% (7.8,25.1) / 18.6% (10.4,27.5)",
+   "scope": "**份额 ≈16%(12~19%)是横跨四个自由度的不变量**:group 16→256(R12)、bit 3→4(R10)、量化器 RTN→GPTQ(R13,GPTQ 的 H-度量权重误差好 2.9×、5070 Linear 100% 更优、端到端好 23%,份额不动)、扰动族 armA→armB(R15,attention+稠密MLP 一起量化,漂移 45.1%,份额 +2.0pp << 预注册 15pp 门限)。当日第五、六个被判否的假设。唯一逃逸:深损伤区(2bit,漂移 88%)反号 −7.5%。EAC-MoE 的 53%(NLL 换算)用尽可测嫌疑,剩评测域/换算口径,标开放",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3ri_armb_share.json:share"
+  },
+  {
+   "group": "R14gate修复容量",
+   "name": "gate-only KL 蒸馏的修复容量(占损伤比例):INT3 / INT2;FP 安慰剂净效应",
+   "value": "0.5%(特异 9.0%) / 29.4%(特异 30.1%);+0.022 纳特",
+   "scope": "**修复容量是损伤深度的函数**:部署档无款可修(INT3 0.5~9.0%,区间来自安慰剂修正,哪端都小),深损伤区修回三成(INT2 29.4%,独立复现 GEMQ 的 34~39% @1.5bpe,跨模型/量化器/uniform)。安慰剂(FP 训 gate)是**净伤害** +0.022 CI(0.013,0.031) —— FP 没东西可修,训练纯过拟合。**双区间图景**:中低损伤区路由是损伤的次要通道(保护无用/回放恒定 16%/修复无款);深损伤区路由翻转为主动补偿器(回放有害 −7.5%/训练修回三成),正确动作从'对齐 FP'翻转为'适配量化'。三件如实披露:判词 INVALID 是判据误伤(收敛判据对 KL 起点≈0 的安慰剂臂是范畴错误,不追改);INT2 修 NLL 0.82 纳特但 ARC 358→340(GEMQ 域偏差再现);比特地板未搬动。R10 跨轮对照逐位精确",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rh_gate_repair.json:summary"
+  },
+  {
+   "group": "R16份额不变量跨模型",
+   "name": "回放份额跨模型跨域矩阵:dsmoe16b(ours/wt2)与 Qwen3-30B(ours/wt2)",
+   "value": "16.0% (9.6,23.2) / 7.5% (2.5,12.8) ; 12.4% (1.8,22.7) / 9.0% (-1.8,20.2)",
+   "scope": "两轮判词均 **replicates**。dsmoe16b 是 **EAC-MoE 53%% 的原模型**(64+2 专家 top-6,同 V2-Lite 族);Qwen3-30B 是**跨族**(128 专家 top-8,无共享专家,gate 纯 Linear,回放 logits = 完全强制)。**份额 ≈8~17%% 现在横跨三模型两族两域,加上此前的 group/bit/量化器/扰动范围四个旋钮 —— n=1 解决**。53%% 的归因至此终结:模型(本轮)、评测域(本轮,方向还反:WikiText2 上 7.5%%,更低)、深度/量化器/扰动范围(V2-Lite 上)全部排除;剩协议组合差异或表格语义与换算假设的出入,如实标注不硬归因。正面陈述:**在 EAC-MoE 自己的模型和评测域上,隔离协议测得 7.5~16%%**。WikiText2 用分块非滑窗,协议差异声明在案",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rj_dsmoe16b.json:per_domain"
+  },
+  {
+   "group": "R17反号三件套",
+   "name": "回放反号(gain<0)的跨模型/跨域/跨量化器矩阵与 V2L 模型内零点",
+   "value": "dsmoe 2bit: −10.4%% (−15.5,−5.8) / −2.5%% (−4.9,−0.4);Qwen3 2bit: +10.0%% / +10.2%%(无反号,损伤 2.04);V2L GPTQ-2bit: −42%%(gain −1.284 [−1.618,−0.963],损伤 3.058);V2L rowmix 零点 ≈1.2 纳特",
+   "scope": "**'对齐 FP 路由在深压缩下有害'跨两模型、两评测域、两量化器成立**。漂移被干净排除:V2L 与 Qwen3 的 2bit 漂移都是 88.1%%,符号相反。跨模型统一损伤阈值判否(V2L 零点 1.2 vs Qwen3 >2.04,第七个);模型内 gain(损伤) 单调平滑穿零(+0.030/0.26 → −0.211/2.81,跨轮对照 p=0 与 R10 逐位精确)。前瞻预测一中一半否:损伤>2.81⟹负 命中;gptq2 落 rowmix 曲线 判否(实测 −1.28 vs 外推 −0.25,量化器有损伤之外的指纹)。副观察:GPTQ-2bit 逐层重构优于 RTN(自检过)而端到端更差(3.06 vs 2.81)—— 逐层贪心与端到端在深压缩下脱钩。与 EAC-MoE 符号级冲突(其工作点即 GPTQ 2-3bit + dsmoe;我们在其模型其域上 RTN-2bit 也是负),如实并置列协议差异,不指控",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rl_reversal_threshold.json:grid"
+  },
+  {
+   "group": "R18R19反号收缩与bias族",
+   "name": "Qwen3 最深档(2bit g256)ours 份额 / Kimi-Linear(bias 校正 gate)ours 份额",
+   "value": "4.3% (2.3,6.0) @损伤 3.33 / 16.9% (9.3,24.6)",
+   "scope": "**R18 no_crossing 成立**:Qwen3 到损伤 3.33(超 V2L 反号点 2.81)、漂移 95.6%% 仍显著为正 ⟹ '每模型都有反号点'判否,反号收缩为家族性质(V2L/dsmoe 有,Qwen3 可测范围无)。软化证据如实并置:ours 份额随损伤单调降(10.4→4.3);对消预测方向命中(正 token 占比 53.8→49.9%%,g256 已过半;对消比 0.46→0.70)。**R18tok 结构发现**:净份额是两股几乎对消的大流的残差 —— V2L 4bit 正贡献 +2816/负 −2343(对消比 0.83),**回放在 47%% 的 token 上有害,即使部署档**;尾部效应(p99 ±0.5 纳特)是净均值的 70 倍,SLA/tail 视角下'回放有益'在 token 级不成立。**R19 replicates**:Kimi-Linear-48B(sigmoid+correction bias,noaux_tc 同族,256 专家,线性 KDA)份额 16.9%%,与 V2L/dsmoe 几乎重合 ⟹ 不变量覆盖 4 模型 × 2 类 gate 机制;其漂移 43%% 远大于 softmax 族的 25~33%% 而份额不动。V4-Flash 本体不可 transformers 加载(仅 SGLang),标开放,Kimi 为其 noaux_tc 同族代表",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3ro_kimilinear.json:per_domain"
+  },
+  {
+   "group": "R21-23文档级rank-1",
+   "name": "oracle 部署档消除率 / 最优置信度选择器占 oracle / rank-1 PC1 方差(9 配置×32 文档)/ zlib 代理 ρ / no-shared 4bit 份额",
+   "value": "98.6% / 12.2%(all_forced 16.8%) / 75.7%(符号 9/9) / +0.72 / 15.6% (6.3,25.1)",
+   "scope": "**净路由效应 = s(doc)×c(config) 的 rank-1 外积**:PC1 75.7%% 方差,9/9 配置载荷符号与份额符号一致(边缘反号被载荷比 CI 更灵敏捕捉)。s(doc)=文档不可压缩信息密度,zlib 压缩比 Spearman +0.72(ours 域 +0.80)—— **零成本可测**;高 s=实体密集散文,s≈0=代码样板/目录/程式化叙述(冗余文本对量化扰动近乎免疫)。跨模型迁移(文档级 r=0.83)的原因:s 是文本性质非模型性质。R21:置信度信号族(熵/top1/margin=12.2/11.8/10.6%% oracle)全败于不选择(16.8%%),argmax 一致率 95.7%% —— token 级无可学身份,Jitkrittum 2307.02764 的 deferral 失效条件解释之(置信度按构造不含臂间信息)。R22/R23:shared 不驱动反号(纯 routed 也反),ε/δ 玩具两轮判否 —— 16%% 免疫第五旋钮(扰动构成),仍无解释。必引同构邻居:2506.12044(example 级 ρ=0.82);三个空位确认:文档级×路由轴 / prefix-probe 选臂 / δ 侧注入",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3rv_v2l4b_nosh.json:per_domain"
+  },
+  {
+   "group": "R26-28层级三部曲",
+   "name": "回放 share 层构成(浅/中/深)/ 深组二分 / hidden 传播",
+   "value": "−1.2%% [−3.2,0.5] / +5.0%% [2.0,8.3] / +8.6%% [4.2,13.1];3.9%%/4.3%%;0.021→0.152 单调升(~4×)",
+   "scope": "**份额 16.6%% 的层级构成**:浅≈0(噪声级)、中 5.0、深 8.6(深组内均分,平台非末层尖峰),三组和 12.4%%,余 4.2pp 为文档级乘性交互(沿 s 轴,深组 doc 结构与 s r=0.94)。两个机制判否:逐层果断度平坦(ρ=−0.02,第13)、吸收论(hidden 差单调升 ~4×,no_decay,第14)。存活事实:**功能敏感度由到输出的距离决定,与扰动传播幅度解耦**(浅层注入漂移最大而NLL≈0,深层最小而效应最大)。正交性(文献对照):权重误差怕浅层(DyMoE/QuantMoE-Bench),路由误差怕深层(本测量)—— 两条方向相反的深度轴;逐层回放文献无先例",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w3sa_absorb.json:curve"
+  },
+  {
+   "group": "W2CV生产级路由margin",
+   "name": "**DeepSeek-V4-Flash**(256 专家 top-6,sqrtsoftplus + bias 校正)INT4 binding / 实际翻转 / soundness 违约",
+   "value": "99.0% / 37.7% / 0",
+   "scope": "**把'production margins 须在 DSV4 上重测'这条 Limitations 关掉**。计分 40 层、42,160 token;剔除 3 个 hash 路由层(HashTopK 由 token id 经 tid2eid 定专家,margin 对它无定义 —— 判别用'该层有无 e_score_correction_bias',不按层号猜)。**口径与旧支不同且必须不同**:V4 用 noaux_tc,选择量是 s(z)+b,per-expert bias 让 logit 域的序与实际选择无关,故 margin 取在**选择分数域**,证书条件 m > 2Lε∞,L=0.319087(sqrtsoftplus 的数值上界)。量化口径 group-32 absmax RTN 与旧支一致 ⟹ 跨模型可比。结论同向且更极端:V2-Lite 93.7% binding → V4 99.0%,证书作为门会拒掉几乎全部流量,而soundness 违约仍为 0(定理成立,不可用的是**门**不是**证书**)。INT3/INT2 binding 100.0%/100.0%",
+   "headline": true,
+   "paper": 4,
+   "source": "experiments/out/w2cv_v4_router_margin.json:per_bits.int4"
+  },
+  {
+   "group": "K0",
+   "name": "TV-输出误差 Spearman",
+   "value": "0.872",
+   "scope": "合成池 99,072 读 ×SR 掩位 m∈{2,3,4};TV_real≥0.5 层 1,528 读rescued=0.0@τ0.02/0.05/0.10;verdict=value_aware_dead",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_k0_output_visible.json:summary"
+  },
+  {
+   "group": "K0R",
+   "name": "真实池 TV-输出误差 Spearman",
+   "value": "0.935",
+   "scope": "189 个 (层,uid) 真实请求池组(池深≥64,q 同 uid 配对,rope 齐,INT6/4/3 三档);TV≥0.5 层为空 ⇒ 预注册分支:该量化族在真实池上 TV 不过 0.5,K0 原判(value_aware_dead)维持并加强",
+   "headline": true,
+   "paper": 3,
+   "source": "experiments/out/rrd_k0_realpool.json:summary"
+  },
+  {
+   "group": "K0'",
+   "name": "q 谱 ρ90(样本内)vs 留出",
+   "value": "0.094 vs 0.538",
+   "scope": "n=96/层 ≪ d=448 小样本警戒;对角 ρ90=0.813;verdict=gray;W2-a 大样本后留出恢复 —— 小样本教训的对照锚",
+   "headline": false,
+   "paper": 3,
+   "source": "experiments/out/rrd_k0p_query_spectrum.json:summary"
+  }
+ ]
+}

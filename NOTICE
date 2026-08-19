@@ -1,0 +1,12 @@
+WitCert — 残差见证认证 KV Cache 压缩
+
+Copyright 2026 Fanzhe Wei, Li Liu
+
+本项目以 Apache License 2.0 授权,见 LICENSE。
+
+第三方组件:
+  - integration/sgl_decode_upstream.py 与 integration/sgl_extend_upstream.py 是
+    SGLang(Apache-2.0)对应文件的**原样副本**,仅作为 diff 基线保留;
+    integration/sgl_decode_cert.py 与 sgl_extend_cert.py 是它们的修改版,
+    改动以 [WitCert] 注释标出。SGLang 版权归其作者所有。
+  - formal/ 依赖 Lean 4 与 mathlib4(Apache-2.0)。

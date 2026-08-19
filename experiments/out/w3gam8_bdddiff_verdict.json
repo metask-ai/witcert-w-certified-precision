@@ -1,0 +1,88 @@
+{
+ "what": "W3-BD 有界差分 c_{ℓ,v} 与质量加权步预算(根定理消费的量)",
+ "verdict": "BDDDIFF_BUDGET_NONVACUOUS",
+ "lm_head_key": "head.weight",
+ "n_baselines": 9,
+ "n_points": 367,
+ "n_pos_mode": 334,
+ "criteria": {
+  "D2_覆盖": true,
+  "D3_非空洞": true,
+  "D4_topk_sound": true
+ },
+ "by_eps": {
+  "0": {
+   "eps": "0.01",
+   "n_layers": 43,
+   "budget_full_vocab": 0.048930284853715214,
+   "budget_empirical_mgf": 0.03897212794951359,
+   "budget_bernstein_ub": 7.640367306223382,
+   "bernstein_alpha": 0.01,
+   "bernstein_slack_rel_median": 2.740984126930024,
+   "c_max_over_all": 3.807513049850665,
+   "c_median_over_layers": 1.4206815620857873,
+   "s2_max_over_vocab": 26.784842591774087,
+   "n_seeds_per_layer": 9,
+   "bias_abs_max": 29.822403794417472,
+   "bias_p_weighted": -2.96992790603523e-15,
+   "topk": {
+    "64": {
+     "budget": 1.2879048876112558,
+     "budget_mass_env": 2.810999709601155,
+     "budget_prod_env": 1.2879048876112558,
+     "tail_mass": 4.866340941989122e-06,
+     "Bmax": 555021047.9656597,
+     "n_tail": 129216,
+     "max_pB_tail": 3.289210024025155e-05
+    },
+    "1024": {
+     "budget": 0.966721898609649,
+     "budget_mass_env": 2.4668353397669276,
+     "budget_prod_env": 0.966721898609649,
+     "tail_mass": 7.897699546566272e-07,
+     "Bmax": 555021047.9656597,
+     "n_tail": 128256,
+     "max_pB_tail": 1.2036112568552005e-05
+    },
+    "8192": {
+     "budget": 0.2757408603498693,
+     "budget_mass_env": 1.9456288153917136,
+     "budget_prod_env": 0.2757408603498693,
+     "tail_mass": 7.757191622381754e-08,
+     "Bmax": 555021047.9656597,
+     "n_tail": 121088,
+     "max_pB_tail": 6.326533333584197e-07
+    },
+    "32768": {
+     "budget": 0.1388572635787347,
+     "budget_mass_env": 1.0289777505238522,
+     "budget_prod_env": 0.1388572635787347,
+     "tail_mass": 3.388158087425097e-09,
+     "Bmax": 555021047.9656597,
+     "n_tail": 96512,
+     "max_pB_tail": 1.7688849149950703e-07
+    }
+   }
+  }
+ },
+ "caliber": [
+  "经验 max 是 sup 的**下界** ⟹ c 与 budget **非空洞但非 sound**;要 sound 需结构性包络或穷尽抽签,本实验不声称",
+  "扰动是层 ℓ 注意力输出注入的随机向量,是'改动该层抽签'的**代理**,不是直接重采样 SR 抽签",
+  "幅度为该层输出 RMS 的 eps 倍,逐档分报;W3GAM 已测该量程响应饱和,故 c 对幅度不敏感是**预期**",
+  "偏差 b_v = ∑_ℓ E_seeds[Δlogit_v] **已实测**并进入 B_v=exp(b_v+s_v²/2);样本数=每层种子数(见 n_seeds_per_layer),少则均值噪声大 —— b_v 是估计不是界,这一层不确定性未被 sound 化"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "H200 GPU-assisted post-hoc",
+  "code": "5741696",
+  "tree": "unset",
+  "dirty": false,
+  "run_id": "w3gam8_bdddiff_verdict",
+  "seed": null,
+  "started_at": "2026-08-08T03:52:44Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3bd_bdddiff_verdict.py"
+}
