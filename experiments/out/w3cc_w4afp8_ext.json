@@ -1,0 +1,112 @@
+{
+ "what": "W3-CC 容量-成本扫描:GLM-5.2 w4afp8",
+ "server_info": {
+  "max_total_num_tokens": 1087808,
+  "max_running_requests": null
+ },
+ "levels": [
+  {
+   "concurrency": 192,
+   "window_s": 127.1,
+   "completed": 492,
+   "errors": 0,
+   "agg_gen_tok_s": 1981.6757876225768,
+   "ttft_p50": 4.132521629333496,
+   "ttft_p95": 54.487765920162204,
+   "tpot_p50": 0.04472406246424188,
+   "tpot_p95": 0.04888222908087206,
+   "hbm_used_mib": [
+    142130,
+    142340,
+    142254,
+    142226,
+    142226,
+    142226,
+    141746,
+    142226
+   ]
+  },
+  {
+   "concurrency": 256,
+   "window_s": 149.2,
+   "completed": 556,
+   "errors": 0,
+   "agg_gen_tok_s": 1907.5866763518102,
+   "ttft_p50": 27.799708127975464,
+   "ttft_p95": 80.26906831264496,
+   "tpot_p50": 0.04582092813316389,
+   "tpot_p95": 0.049623280542004135,
+   "hbm_used_mib": [
+    142130,
+    142340,
+    142254,
+    142226,
+    142226,
+    142226,
+    141746,
+    142226
+   ]
+  },
+  {
+   "concurrency": 384,
+   "window_s": 178.3,
+   "completed": 684,
+   "errors": 0,
+   "agg_gen_tok_s": 1963.9358531969722,
+   "ttft_p50": 54.702526330947876,
+   "ttft_p95": 129.00574910640717,
+   "tpot_p50": 0.045311527476152094,
+   "tpot_p95": 0.04923086087064501,
+   "hbm_used_mib": [
+    142894,
+    143104,
+    143018,
+    142990,
+    142990,
+    142990,
+    142510,
+    142990
+   ]
+  },
+  {
+   "concurrency": 512,
+   "window_s": 222.5,
+   "completed": 812,
+   "errors": 0,
+   "agg_gen_tok_s": 1868.8183087711664,
+   "ttft_p50": 104.0554610490799,
+   "ttft_p95": 157.25954074859618,
+   "tpot_p50": 0.04768290141790579,
+   "tpot_p95": 0.05135101985091566,
+   "hbm_used_mib": [
+    142896,
+    143106,
+    143020,
+    142990,
+    142990,
+    142992,
+    142510,
+    142990
+   ]
+  }
+ ],
+ "caliber": [
+  "closed-loop;SSE 块计增量 token(块≈解码步,两臂同法可比,绝对 tok/s 以此口径自洽)",
+  "prompt 4000 chars 自然语料,max_new 512,temperature 0.7 ignore_eos(解码主导)",
+  "radix/graphs 生产姿态;两臂同机同客户端同种子"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "sglang 0.5.13 tp8/ep8/dp8, w4afp8",
+  "code": "3de1fbe",
+  "tree": "100a332363c7",
+  "dirty": false,
+  "run_id": "w3cc_w4afp8",
+  "seed": 7,
+  "started_at": "2026-08-07T06:29:25Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3cc_capacity_client.py"
+}

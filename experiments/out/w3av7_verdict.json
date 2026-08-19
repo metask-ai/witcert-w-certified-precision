@@ -1,0 +1,53 @@
+{
+ "verdict": "CONFIRMATORY_VALID",
+ "criteria": {
+  "V0_冻结自证": {
+   "ok": true,
+   "value": "{'union': 'c197444', 'widehO': 'c197444'}"
+  },
+  "V0b_参数冻结对账": {
+   "ok": true,
+   "value": "widehO(逐账户) mode=phys B=800000.0 lam=0.004 union无cum=True"
+  },
+  "V1_两臂产物齐": {
+   "ok": true,
+   "value": "{'union': True, 'widehO': True}"
+  },
+  "V2_widehO_armed生效": {
+   "ok": true,
+   "value": "admit_calls=352483"
+  },
+  "V3_物理anytime复现": {
+   "ok": true,
+   "value": "cum_W_gap_max>0 账户=0(held-out)"
+  },
+  "V3d_控制面对账复现": {
+   "ok": true,
+   "value": "realized>prospective 账户=0(held-out)"
+  },
+  "V5_覆盖收益复现": {
+   "ok": true,
+   "value": "widehO fb=0.1441 < union fb=0.3001(同轮 held-out)"
+  }
+ },
+ "summary": {
+  "fb_widehO": 0.14406844489124565,
+  "fb_union": 0.30009885142022047,
+  "n_admit": 352483
+ },
+ "scope": "held-out confirmatory:冻结 λ=4e-3/B_phys=8e5,换未见 prompt",
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "unset",
+  "stack": "local verdict",
+  "code": "acb0b53",
+  "tree": "b154cafc9744",
+  "dirty": false,
+  "run_id": "w3av7_verdict",
+  "seed": null,
+  "started_at": "2026-08-07T16:35:59Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3av7_verdict.py"
+}

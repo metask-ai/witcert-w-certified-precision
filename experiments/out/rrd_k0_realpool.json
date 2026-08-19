@@ -1,0 +1,74 @@
+{
+ "what": "K0-R:真实请求池 TV vs ‖Δy‖(K0 合成池疑点复核)",
+ "snapshot": {
+  "realpool_reads": {
+   "key_dims": [
+    "layer",
+    "uid"
+   ],
+   "key_card": {
+    "uid": 10,
+    "layer": 21
+   }
+  }
+ },
+ "preregistered": {
+  "stratum": "TV_real≥0.5",
+  "tau_main": 0.05,
+  "revived": "rescued≥0.5",
+  "dead_confirmed": "rescued≤0.2",
+  "min_pool": 64
+ },
+ "verdict": "inconclusive_no_high_tv",
+ "summary": {
+  "n_groups_used": 189,
+  "n_groups_dropped_shallow": 21,
+  "n_stratum_points": 0,
+  "rescued_frac": {},
+  "spearman_tv_reldy_all": 0.9350109100341797,
+  "n_points_all": 514080,
+  "tv_p50_int4": null
+ },
+ "caliber": [
+  "池=同请求 (layer,uid) 条目组(rank0,rank 间复制);q 同 uid 配对,四 rank 合并",
+  "打分全 512 维(rope 齐);量化只动前 448 维(生产同口径)",
+  "K0 对拍参照:合成池 Spearman=0.872,rescued=0.0@τ0.10",
+  "uid 语义=身份状态机分组(radix-on 口径),非逐 token 精确请求边界"
+ ],
+ "inputs": [
+  {
+   "path": "out/w1_wc_w1pool_raw.rank0.pt",
+   "bytes": 143449871,
+   "sha256_16": "52fd1f59120d652f"
+  },
+  {
+   "path": "out/w1_wc_w1pool_raw.rank1.pt",
+   "bytes": 143449871,
+   "sha256_16": "f8a597d7e88de0a0"
+  },
+  {
+   "path": "out/w1_wc_w1pool_raw.rank2.pt",
+   "bytes": 143449871,
+   "sha256_16": "5b1d2e0eb7f0a184"
+  },
+  {
+   "path": "out/w1_wc_w1pool_raw.rank3.pt",
+   "bytes": 143449871,
+   "sha256_16": "df30b556545cd158"
+  }
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "local cpu offline (torch)",
+  "code": "unset",
+  "tree": "28c937032837",
+  "dirty": null,
+  "run_id": "rrd_k0_realpool",
+  "seed": null,
+  "started_at": "2026-08-06T19:05:58Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "rrd_k0_realpool.py"
+}

@@ -1,0 +1,50 @@
+{
+ "f1_bound_ladder": {
+  "measured_TV": 0.118,
+  "hellinger": 0.159,
+  "subgaussian": 0.23,
+  "tanh_vacuous": 0.996,
+  "source": "experiments/out/w3sle_eout_verdict.json:summary"
+ },
+ "f2_gamma_saturation": {
+  "linearity_ratio_median": 14.1,
+  "n_nonlinear_pairs": 86,
+  "noise_floor": 0.0,
+  "source": "experiments/out/w3gam_gamma_verdict.json:summary"
+ },
+ "f3_conformal": {
+  "conformal_threshold_k1": 0.4095,
+  "conformal_risk_k1": 0.0254,
+  "cp_risk": 0.2501,
+  "cp_threshold": 0.5116,
+  "n_curve_points": 8,
+  "source": "w3cf_multihist_verdict.json"
+ },
+ "f4_history_certificates": {
+  "n_hist": 80,
+  "mu_cal": 0.5116,
+  "mu_conformal": 0.4095,
+  "source": "experiments/out/w3cf_multihist_verdict.json"
+ },
+ "f5_coverage_budget": {
+  "union": 0.315,
+  "cumtight": 0.842,
+  "cumopen": 0.339,
+  "cumwide": 0.0079,
+  "source": "experiments/out/w3av5_coverage.json"
+ },
+ "f6_proof_chain": {
+  "source": "formal/WitCert/*.lean(仅定理名,无数值)"
+ },
+ "f7_read_bound_vacuity": {
+  "vac_eform_m2_pct": 6.7,
+  "vac_eform_m3_pct": 41.8,
+  "vac_eform_m4_pct": 92.9,
+  "source": "experiments/out/w3sl_readtv_offline.json:per_m"
+ },
+ "f8_history_cost": {
+  "n_hist": 80,
+  "achieved": 0.0254,
+  "source": "解析曲线(无新测量);实测点取自 w3cf"
+ }
+}

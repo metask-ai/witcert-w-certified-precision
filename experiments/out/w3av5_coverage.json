@@ -1,0 +1,36 @@
+{
+ "what": "W3-AV5:armed cumloss 覆盖收益转正点(union vs cumwide B̃=5e4)",
+ "verdict": "coverage_gain_positive",
+ "summary": {
+  "union_fb_median": 0.3149139282073976,
+  "cumwide_fb_median": 0.007898678044771186,
+  "fallback_reduction_x": 39.9,
+  "monotone_curve": {
+   "union": 0.3149139282073976,
+   "cumtight_5e3": 0.842,
+   "cumopen_2e4": 0.339,
+   "cumwide_5e4": 0.007898678044771186
+  }
+ },
+ "scope": "归一化 z 门控(非物理①b);cumwide exploratory(非预注册确认);回退率=授权量非质量",
+ "caliber": [
+  "union 高回退=望远镜 δ_i 二次衰减致量级门 u_e 爆炸;cumloss 固定 δ_i=0.01 避免衰减,预算够大不触发 cumloss 门时回退骤降",
+  "16 端点口径同 W3-AV4b(rank0 去 TP 镜像+排暖机);冻结码 fce92be",
+  "**exploratory**:B̃=5e4 看 V5 失败后选,升 confirmatory 需 held-out 冻结复证",
+  "回退率低=更多压缩授权,**非质量证据**"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "local",
+  "stack": "local offline coverage analysis",
+  "code": "aa1f585",
+  "tree": "48639068a068",
+  "dirty": false,
+  "run_id": "w3av5_coverage",
+  "seed": null,
+  "started_at": "2026-08-07T12:37:30Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3av5_coverage.py"
+}

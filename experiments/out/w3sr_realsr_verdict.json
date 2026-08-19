@@ -1,0 +1,76 @@
+{
+ "what": "W3-SR 真实部署 SR 抽签下的 E[TV](去代理;betting CS 上界)",
+ "verdict": "REALSR_ETV_BOUNDED",
+ "lm_head_key": "head.weight",
+ "n_draws": 160,
+ "n_baselines": 160,
+ "n_pos_mode": 334,
+ "criteria": {
+  "S0_压缩真发生": true,
+  "n_compressed": 1999586,
+  "S1_抽签真在变": true,
+  "n_unique_TV": 160,
+  "S4_两臂对账": true,
+  "n_pos_exact": 334,
+  "n_pos_comp": 334,
+  "n_arm_gap": 0,
+  "n_exact_caps": 160,
+  "n_comp_caps": 160,
+  "J1_noise_floor": 0.0,
+  "J2_量纲": true,
+  "J3_点估非空洞": true,
+  "J4_上界非空洞": true,
+  "J5_betting_UCB非空洞": true,
+  "alpha": 0.01
+ },
+ "summary": {
+  "Z_mean": 1.000008056977144,
+  "Z_var": 6.173550587350484e-11,
+  "Z_min": 1.00000161486804,
+  "Z_max": 1.0000515286262608,
+  "TV_mean": 1.63833197413433e-05,
+  "TV_max": 8.912867297735958e-05,
+  "TV_min": 4.0532868654261905e-06,
+  "TV_ucb_betting": 0.05519404720208109,
+  "budget_point": 0.002838475768195643,
+  "budget_bernstein_ub": 0.2736630526642933,
+  "bernstein_slack": 0.07775911360150786,
+  "slack_over_excess": 9651.152313418348
+ },
+ "lean_theorem": "served_tv_mean_le_massweighted",
+ "hyp_checks": {
+  "hp": "verified",
+  "hps": "verified",
+  "hcenter": {
+   "status": "waived",
+   "reason": "by-construction",
+   "note": "TV(p, softmax(le+δ)) 对 δ 加常数**天然不变**(softmax 平移不变),故 gauge 由构造满足,无需显式中心化;Z 一路另做了显式中心化"
+  },
+  "hmgf": {
+   "status": "waived",
+   "reason": "measured-directly",
+   "note": "本产物不经 B_v 走该定理的 MGF 支路,而是直接测 TV_j 并用 betting CS 界 E[TV](TV∈[0,1] 为确定性边界);标量矩 Z 一路仅作对照报出"
+  }
+ },
+ "caliber": [
+  "**部署量非代理**:扰动即部署的随机舍入本身(SR 种子含 current_uid,逐请求不同),不再是注意力输出上的高斯注入;全层天然联合",
+  "标量归约 ⟹ **无 129,280 词元的 union**,α 只付一次",
+  "J4 的 R 取**样本极值**而非确定性上界 ⟹ 该上界是**诊断非 sound**;真 sound 需 Z 的确定性上界,或 betting 型置信序列(方差自适应、anytime-valid,恰是本文已有机制)",
+  "**TV 的 [0,1] 是确定性边界**(两概率分布之间)⟹ betting CS 不需要任何样本极值,Bernstein 那个'R 取样本 max'的 non-sound 缺口在此路线上消失;且 CS 是 anytime-valid(与账本同语义)。剩余假设:各 draw 独立同分布",
+  "估计风险 α 须与账本风险 δ 相加:部署证书报 δ+α"
+ ],
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "hgx",
+  "stack": "H200 GPU-assisted post-hoc",
+  "code": "0c56b90",
+  "tree": "unset",
+  "dirty": false,
+  "run_id": "w3sr_realsr",
+  "seed": null,
+  "started_at": "2026-08-08T06:59:01Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3sr_realsr_verdict.py"
+}

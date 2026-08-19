@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper."
+title: "Pricing the Risk of Runtime Compression: Anytime-Valid Admission and a Served-Output Law for Compressed Serving State"
+authors:
+  - given-names: Fanzhe
+    family-names: Wei
+    affiliation: Metask Lab
+  - given-names: Li
+    family-names: Liu
+    affiliation: Metask Lab
+repository-code: https://github.com/metask-ai/witcert-w-certified-precision
+license: Apache-2.0
+identifiers:
+  - type: other
+    value: "arXiv:2608.15810"

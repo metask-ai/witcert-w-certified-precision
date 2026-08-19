@@ -1,0 +1,56 @@
+{
+ "verdict": "PHYS_GATE_VALID",
+ "criteria": {
+  "V0_冻结自证": {
+   "ok": true,
+   "value": "{'wide': ('4e35993', False), 'tight': ('4e35993', False)}"
+  },
+  "V0b_预算口径对账": {
+   "ok": true,
+   "value": "{'wide': (800000.0, 'phys', 0.004), 'tight': (550000.0, 'phys', 0.004)}"
+  },
+  "V1_两臂产物齐": {
+   "ok": true,
+   "value": "{'wide': True, 'tight': True}"
+  },
+  "V2_armed生效": {
+   "ok": true,
+   "value": "{'wide': 317293, 'tight': 352333}"
+  },
+  "V3_物理anytime零违约": {
+   "ok": true,
+   "value": "cum_W_gap_max>0 账户=0"
+  },
+  "V3d_控制面对账": {
+   "ok": true,
+   "value": "realized>prospective 账户=0(gating_conservative 实证)"
+  },
+  "V4_剂量反应": {
+   "ok": true,
+   "value": "tight fb=0.4800 > wide fb=0.2197"
+  },
+  "V5_物理覆盖收益": {
+   "ok": true,
+   "value": "wide fb=0.2197 < union 基线 0.3149"
+  },
+  "V6_开销": {
+   "ok": true,
+   "value": "wide wall=357.6 ≤ 344.5×1.10"
+  }
+ },
+ "scope": "①b 物理门控真参与 admission;wide/tight 预注册 B_phys",
+ "manifest": {
+  "schema": "wc-prov/1",
+  "machine": "unset",
+  "stack": "local verdict",
+  "code": "5737e47",
+  "tree": "6940b76c89fd",
+  "dirty": false,
+  "run_id": "w3av6_verdict",
+  "seed": null,
+  "started_at": "2026-08-07T15:16:12Z",
+  "witcert_env": {},
+  "adapters": ""
+ },
+ "generated_by": "w3av6_verdict.py"
+}
